@@ -8,9 +8,9 @@ export default function Header() {
           <div className="col-12">
             <nav className="navbar navbar-expand-lg navbar-light bg-custom">
               <div className="container">
-                <a className="navbar-brand" href="./index.html">
+                <button className="navbar-brand">
                   <img src="./public/assets/img/logo.png" alt="logo" />
-                </a>
+                </button>
                 <button
                   className="navbar-toggler"
                   type="button"
@@ -28,29 +28,64 @@ export default function Header() {
                 >
                   <ul className="navbar-nav custom-list">
                     <li className="nav-item">
-                      <a className="nav-link active" href="./index.html">
+                      <button
+                        className="nav-link active"
+                        style={{
+                          background: "transparent",
+                          border: "none",
+                          textTransform: "capitalize",
+                        }}
+                      >
                         home
-                      </a>
+                      </button>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="./about.html">
+                      <button
+                        className="nav-link"
+                        style={{
+                          background: "transparent",
+                          border: "none",
+                          textTransform: "capitalize",
+                        }}
+                      >
                         about
-                      </a>
+                      </button>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="./service..html">
+                      <button
+                        className="nav-link"
+                        style={{
+                          background: "transparent",
+                          border: "none",
+                          textTransform: "capitalize",
+                        }}
+                      >
                         service
-                      </a>
+                      </button>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="./portfolio.html">
+                      <button
+                        className="nav-link"
+                        style={{
+                          background: "transparent",
+                          border: "none",
+                          textTransform: "capitalize",
+                        }}
+                      >
                         portfolio
-                      </a>
+                      </button>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="./contact.html">
+                      <button
+                        className="nav-link"
+                        style={{
+                          background: "transparent",
+                          border: "none",
+                          textTransform: "capitalize",
+                        }}
+                      >
                         contact
-                      </a>
+                      </button>
                     </li>
                   </ul>
                 </div>

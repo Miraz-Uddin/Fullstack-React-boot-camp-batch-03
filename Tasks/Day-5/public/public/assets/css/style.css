@@ -98,6 +98,11 @@ ul li {
     margin: 175px 0 90px 0;
 }
 
+.banner .container .row .col .content .downarrow button {
+    background: transparent;
+    border: none;
+}
+
 
 /* ==========about css========== */
 
@@ -323,6 +328,7 @@ ul li {
 }
 
 .footer .social_links {
+    align-items: center;
     justify-content: space-between;
     color: #fff;
     line-height: 60px;
@@ -331,16 +337,17 @@ ul li {
     width: 300px;
 }
 
-.footer .social_links a {
+.footer .social_links button {
     color: #fff;
     transition: all linear .3s;
+    text-transform: uppercase;
 }
 
-.footer .social_links a:hover {
+.footer .social_links button:hover {
     color: #353535;
 }
 
-.footer .container .row .social_links a.btn {
+.footer .container .row .social_links button.btn {
     width: 40px;
     height: 40px;
 }
