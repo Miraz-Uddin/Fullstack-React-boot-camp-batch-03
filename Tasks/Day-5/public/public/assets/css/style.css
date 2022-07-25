@@ -323,9 +323,12 @@ ul li {
 }
 
 .footer .social_links {
+    justify-content: space-between;
     color: #fff;
     line-height: 60px;
     text-align: right;
+    display: flex;
+    width: 300px;
 }
 
 .footer .social_links a {
