@@ -8,7 +8,13 @@ export default function Header() {
           <div className="col-12">
             <nav className="navbar navbar-expand-lg navbar-light bg-custom">
               <div className="container">
-                <button className="navbar-brand">
+                <button
+                  className="navbar-brand"
+                  style={{
+                    background: "transparent",
+                    border: "none",
+                  }}
+                >
                   <img src="./public/assets/img/logo.png" alt="logo" />
                 </button>
                 <button
