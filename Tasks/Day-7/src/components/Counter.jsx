@@ -35,7 +35,7 @@ export default function Counter() {
               className="card text-white bg-secondary mb-3"
               style={{ width: "22rem", margin: "auto" }}
             >
-              <div className="card-body">
+              <div className="card-body text-center">
                 <h5 className="card-title">Counter App</h5>
                 <p className="card-text">Click Below Links to see the magic</p>
               </div>
