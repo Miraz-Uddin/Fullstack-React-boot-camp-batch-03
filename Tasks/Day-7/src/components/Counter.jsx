@@ -3,6 +3,7 @@ import { IoIosAddCircle, IoIosRemoveCircle } from "react-icons/io";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
+  const cardValues = [30, 33, 98, 10];
   const handleIncrement = () => {
     setCount(count + 1);
   };
@@ -20,6 +21,9 @@ export default function Counter() {
   const handleReset = () => {
     setCount(0);
   };
+
+  const [pickedNumber, setPickedNumber] = useState(null);
+  console.log(pickedNumber);
   return (
     <>
       <div className="container">
@@ -95,53 +99,64 @@ export default function Counter() {
           </div>
         </div>
       </div>
-      <IsOddOrEven />
-    </>
-  );
-}
-
-function IsOddOrEven() {
-  return (
-    <>
       <div className="container">
-        <div className="row">
+        <div className="row mt-5">
           <div className="col-8 m-auto">
             <div
               className="card text-white bg-dark mb-3"
               style={{ width: "25rem", margin: "auto" }}
             >
-              <div className="card-body">
-                <p className="card-text">Selected Number is Even</p>
-              </div>
+              <IsOddOrEven pickedNumber={pickedNumber} />
+              <RandomCards
+                cardValues={cardValues}
+                setPickedNumber={setPickedNumber}
+              />
             </div>
-            <p className="d-flex justify-content-center">
-              <span
-                className="badge rounded-pill bg-primary me-2"
-                style={{ fontSize: "35px", borderRadius: "50%" }}
-              >
-                11
-              </span>
-              <span
-                className="badge rounded-pill bg-primary me-2"
-                style={{ fontSize: "35px", borderRadius: "50%" }}
-              >
-                11
-              </span>
-              <span
-                className="badge rounded-pill bg-primary me-2"
-                style={{ fontSize: "35px", borderRadius: "50%" }}
-              >
-                11
-              </span>
-              <span
-                className="badge rounded-pill bg-primary me-2"
-                style={{ fontSize: "35px", borderRadius: "50%" }}
-              >
-                11
-              </span>
-            </p>
           </div>
         </div>
+      </div>
+    </>
+  );
+}
+
+function IsOddOrEven({ pickedNumber }) {
+  return (
+    <>
+      <div className="card-body text-center">
+        {!pickedNumber && (
+          <p className="card-text">No Number is Selected Yet</p>
+        )}
+        {pickedNumber && (
+          <p className="card-text">
+            Selected Number: {pickedNumber} is{" "}
+            {pickedNumber % 2 == 0 ? (
+              <b className="text-success">Even</b>
+            ) : (
+              <b className="text-warning">Odd</b>
+            )}
+          </p>
+        )}
+      </div>
+    </>
+  );
+}
+
+function RandomCards({ cardValues, setPickedNumber }) {
+  return (
+    <>
+      <div className="card-body">
+        <p className="d-flex justify-content-center">
+          {cardValues.map((cardValue, index) => (
+            <span
+              className="badge rounded-pill bg-primary me-2"
+              style={{ fontSize: "35px", borderRadius: "50%" }}
+              key={index}
+              onClick={() => setPickedNumber(cardValue)}
+            >
+              {cardValue}
+            </span>
+          ))}
+        </p>
       </div>
     </>
   );
