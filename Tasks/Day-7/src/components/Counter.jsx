@@ -95,6 +95,54 @@ export default function Counter() {
           </div>
         </div>
       </div>
+      <IsOddOrEven />
+    </>
+  );
+}
+
+function IsOddOrEven() {
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="col-8 m-auto">
+            <div
+              className="card text-white bg-dark mb-3"
+              style={{ width: "25rem", margin: "auto" }}
+            >
+              <div className="card-body">
+                <p className="card-text">Selected Number is Even</p>
+              </div>
+            </div>
+            <p className="d-flex justify-content-center">
+              <span
+                className="badge rounded-pill bg-primary me-2"
+                style={{ fontSize: "35px", borderRadius: "50%" }}
+              >
+                11
+              </span>
+              <span
+                className="badge rounded-pill bg-primary me-2"
+                style={{ fontSize: "35px", borderRadius: "50%" }}
+              >
+                11
+              </span>
+              <span
+                className="badge rounded-pill bg-primary me-2"
+                style={{ fontSize: "35px", borderRadius: "50%" }}
+              >
+                11
+              </span>
+              <span
+                className="badge rounded-pill bg-primary me-2"
+                style={{ fontSize: "35px", borderRadius: "50%" }}
+              >
+                11
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
