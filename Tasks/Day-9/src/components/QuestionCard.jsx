@@ -9,6 +9,7 @@ export default function QuestionCard({
   count,
   navigateNext,
   quizEnd,
+  resetQuiz,
   answersSet,
 }) {
   const { question, correct_answer, incorrect_answers } = quiz;
@@ -32,22 +33,23 @@ export default function QuestionCard({
                   <AnswerCard key={index} answer={Parser(answer)} />
                 ))}
               </ul>
-              {index + 1 != count ? (
-                <div className="card-body">
+              <div className="card-body d-flex justify-content-between">
+                {index + 1 != count ? (
                   <button
                     onClick={navigateNext}
                     className="btn btn-dark btn-sm"
                   >
                     Next Question
                   </button>
-                </div>
-              ) : (
-                <div className="card-body">
+                ) : (
                   <button onClick={quizEnd} className="btn btn-info btn-sm">
                     Finish Quiz
                   </button>
-                </div>
-              )}
+                )}
+                <button onClick={resetQuiz} className="btn btn-danger btn-sm">
+                  Reset Quiz
+                </button>
+              </div>
             </div>
           </div>
         </div>

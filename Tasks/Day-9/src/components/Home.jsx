@@ -4,7 +4,7 @@ import QuestionCard from "./QuestionCard";
 export default function Home() {
   const [allQuiz, setAllQuiz] = useState(null);
   const [currentQuizQuestionIndex, setCurrentQuizQuestionIndex] = useState(0);
-  const [quizOver, setQuizOver] = useState(0);
+  const [quizOver, setQuizOver] = useState(false);
   const fetchQuiz = async () => {
     try {
       let response = await fetch(
@@ -14,7 +14,7 @@ export default function Home() {
         throw new Error(`HTTP error! status: ${response.status}`);
       const { results } = await response.json();
       setAllQuiz(results);
-      setQuizOver(1);
+      setQuizOver(false);
     } catch (e) {
       setAllQuiz(null);
       console.log("Data cannot be Fetched");
@@ -28,13 +28,19 @@ export default function Home() {
   };
 
   const quizEnd = () => {
-    setQuizOver(2);
+    setQuizOver(true);
+    setCurrentQuizQuestionIndex(0);
+    setAllQuiz(null);
+  };
+
+  const resetQuiz = () => {
+    setQuizOver(false);
     setCurrentQuizQuestionIndex(0);
     setAllQuiz(null);
   };
   return (
     <>
-      {quizOver == 2 ? <p>Show the Answer. Score: 0</p> : ""}
+      {quizOver && <p>Show the Answer. Score: 0</p>}
       {!allQuiz ? (
         <button className="btn btn-success btn-sm" onClick={fetchQuiz}>
           Start Quiz
@@ -46,6 +52,7 @@ export default function Home() {
           count={allQuiz.length}
           navigateNext={navigateNext}
           quizEnd={quizEnd}
+          resetQuiz={resetQuiz}
           answersSet={[
             allQuiz[currentQuizQuestionIndex].correct_answer,
             ...allQuiz[currentQuizQuestionIndex].incorrect_answers,
