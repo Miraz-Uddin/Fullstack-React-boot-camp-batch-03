@@ -28,11 +28,15 @@ export default function QuestionCard({
                 </h5>
                 <p className="card-text">{Parser(question)}</p>
               </div>
-              <ul className="list-group list-group-flush">
+              <div className="list-group">
                 {shufflingAnswers.map((answer, index) => (
-                  <AnswerCard key={index} answer={Parser(answer)} />
+                  <AnswerCard
+                    key={index}
+                    answer={Parser(answer)}
+                    index={index}
+                  />
                 ))}
-              </ul>
+              </div>
               <div className="card-body d-flex justify-content-between">
                 {index + 1 != count ? (
                   <button
