@@ -4,6 +4,7 @@ import QuestionCard from "./QuestionCard";
 export default function Home() {
   const [allQuiz, setAllQuiz] = useState(null);
   const [currentQuizQuestionIndex, setCurrentQuizQuestionIndex] = useState(0);
+  const [quizOver, setQuizOver] = useState(0);
   const fetchQuiz = async () => {
     try {
       let response = await fetch(
@@ -13,6 +14,7 @@ export default function Home() {
         throw new Error(`HTTP error! status: ${response.status}`);
       const { results } = await response.json();
       setAllQuiz(results);
+      setQuizOver(1);
     } catch (e) {
       setAllQuiz(null);
       console.log("Data cannot be Fetched");
@@ -26,11 +28,13 @@ export default function Home() {
   };
 
   const quizEnd = () => {
+    setQuizOver(2);
     setCurrentQuizQuestionIndex(0);
     setAllQuiz(null);
   };
   return (
     <>
+      {quizOver == 2 ? <p>Show the Answer. Score: 0</p> : ""}
       {!allQuiz ? (
         <button className="btn btn-success btn-sm" onClick={fetchQuiz}>
           Start Quiz
