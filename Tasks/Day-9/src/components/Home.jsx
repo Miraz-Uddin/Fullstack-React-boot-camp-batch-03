@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import arrayShuffle from "../utils/arrayShuffle";
+import InitialCard from "./InitialCard";
 import QuestionCard from "./QuestionCard";
+import ScoreCard from "./ScoreCard";
 
 export default function Home() {
   const [allQuiz, setAllQuiz] = useState(null);
   const [quizOver, setQuizOver] = useState(false);
-  const [currentQuiz, setCurrentQuiz] = useState({
+  const currentQuizInitial = {
     index: 0,
+    totalMark: 0,
     totalScore: 0,
     selectedAnswer: null,
     correctAnswer: null,
     question: null,
     answersSet: [],
-  });
+  };
+  const [currentQuiz, setCurrentQuiz] = useState(currentQuizInitial);
 
   const fetchQuiz = async () => {
     try {
@@ -27,6 +31,7 @@ export default function Home() {
       setCurrentQuiz((prev) => {
         return {
           index: 0,
+          totalMark: results.length,
           totalScore: 0,
           correctAnswer: results[0].correct_answer,
           question: results[0].question,
@@ -82,17 +87,7 @@ export default function Home() {
     setQuizOver(false);
     setAllQuiz(null);
     setCurrentQuiz((prev) => {
-      return {
-        ...prev,
-        index: 0,
-        totalScore: 0,
-        correctAnswer: allQuiz[0].correct_answer,
-        question: allQuiz[0].question,
-        answersSet: arrayShuffle([
-          ...allQuiz[0].incorrect_answers,
-          allQuiz[0].correct_answer,
-        ]),
-      };
+      return currentQuizInitial;
     });
   };
 
@@ -115,12 +110,14 @@ export default function Home() {
 
   return (
     <>
-      {quizOver && <p>Score: {currentQuiz.totalScore}</p>}
-      {!allQuiz ? (
-        <button className="btn btn-success btn-sm" onClick={fetchQuiz}>
-          Start Quiz
-        </button>
-      ) : (
+      {quizOver && (
+        <ScoreCard
+          totalScore={currentQuiz.totalScore}
+          totalMark={currentQuiz.totalMark}
+          resetQuiz={resetQuiz}
+        />
+      )}
+      {allQuiz ? (
         <QuestionCard
           quiz={currentQuiz}
           count={allQuiz.length}
@@ -129,6 +126,10 @@ export default function Home() {
           resetQuiz={resetQuiz}
           handleSelectedAnswer={handleSelectedAnswer}
         />
+      ) : quizOver ? (
+        <></>
+      ) : (
+        <InitialCard fetchQuiz={fetchQuiz} />
       )}
     </>
   );

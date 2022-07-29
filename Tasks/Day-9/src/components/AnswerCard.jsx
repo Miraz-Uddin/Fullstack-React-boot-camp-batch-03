@@ -9,11 +9,6 @@ export default function AnswerCard({
   correctAnswer,
   selectedAnswer,
 }) {
-  // user selcted answer
-  // picked answer
-  // correct answer
-  console.log(correctAnswer);
-  console.log(selectedAnswer);
   const isRightAnswer = selectedAnswer && answer === correctAnswer;
   const isWrongAnswer =
     selectedAnswer &&
