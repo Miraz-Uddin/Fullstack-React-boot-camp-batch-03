@@ -3,16 +3,17 @@ import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import AnswerCard from "./AnswerCard";
 
-export default function QuestionCard({
-  quiz,
-  index,
-  count,
-  navigateNext,
-  quizEnd,
-  resetQuiz,
-}) {
-  const { question, correct_answer, incorrect_answers } = quiz;
-  const answers = [...incorrect_answers, correct_answer];
+export default function QuestionCard(props) {
+  const { index, selectedAnswer, correctAnswer, question, answersSet } =
+    props.quiz;
+  const { count, navigateNext, quizEnd, resetQuiz, handleSelectedAnswer } =
+    props;
+  // console.log(selectedAnswer);
+  console.log(correctAnswer);
+  // console.log(answersSet);
+  // console.log(navigateNext)
+  // console.log(quizEnd)
+  // console.log(resetQuiz);
   return (
     <>
       <div className="container">
@@ -26,8 +27,13 @@ export default function QuestionCard({
                 <p className="card-text">{Parser(question)}</p>
               </div>
               <ListGroup defaultActiveKey="#0">
-                {answers.map((answer, index) => (
-                  <AnswerCard key={index} answer={answer} index={index} />
+                {answersSet.map((answer, i) => (
+                  <AnswerCard
+                    key={i}
+                    answer={answer}
+                    index={i}
+                    handleSelectedAnswer={handleSelectedAnswer}
+                  />
                 ))}
               </ListGroup>
               <div className="card-body d-flex justify-content-between">

@@ -1,10 +1,18 @@
 import React, { useState } from "react";
+import arrayShuffle from "../utils/arrayShuffle";
 import QuestionCard from "./QuestionCard";
 
 export default function Home() {
   const [allQuiz, setAllQuiz] = useState(null);
-  const [currentQuizQuestionIndex, setCurrentQuizQuestionIndex] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
+  const [currentQuiz, setCurrentQuiz] = useState({
+    index: 0,
+    totalScore: 0,
+    correctAnswer: "",
+    question: "",
+    answersSet: [],
+  });
+
   const fetchQuiz = async () => {
     try {
       let response = await fetch(
@@ -15,6 +23,18 @@ export default function Home() {
       const { results } = await response.json();
       setAllQuiz(results);
       setQuizOver(false);
+      setCurrentQuiz((prev) => {
+        return {
+          index: 0,
+          totalScore: 0,
+          correctAnswer: results[0].correct_answer,
+          question: results[0].question,
+          answersSet: arrayShuffle([
+            ...results[0].incorrect_answers,
+            results[0].correct_answer,
+          ]),
+        };
+      });
     } catch (e) {
       setAllQuiz(null);
       console.log("Data cannot be Fetched");
@@ -23,38 +43,83 @@ export default function Home() {
   };
 
   const navigateNext = () => {
-    if (currentQuizQuestionIndex < allQuiz.length - 1) {
-      setCurrentQuizQuestionIndex((prev) => prev + 1);
+    if (currentQuiz.index < allQuiz.length - 1) {
+      setCurrentQuiz((prev) => {
+        return {
+          ...prev,
+          index: prev.index + 1,
+          correctAnswer: allQuiz[prev.index + 1].correct_answer,
+          question: allQuiz[prev.index + 1].question,
+          answersSet: arrayShuffle([
+            ...allQuiz[prev.index + 1].incorrect_answers,
+            allQuiz[prev.index + 1].correct_answer,
+          ]),
+        };
+      });
     }
   };
 
   const quizEnd = () => {
     setQuizOver(true);
-    setCurrentQuizQuestionIndex(0);
     setAllQuiz(null);
+    setCurrentQuiz((prev) => {
+      return {
+        ...prev,
+        index: 0,
+        correctAnswer: allQuiz[0].correct_answer,
+        question: allQuiz[0].question,
+        answersSet: arrayShuffle([
+          ...allQuiz[0].incorrect_answers,
+          allQuiz[0].correct_answer,
+        ]),
+      };
+    });
   };
 
   const resetQuiz = () => {
     setQuizOver(false);
-    setCurrentQuizQuestionIndex(0);
     setAllQuiz(null);
+    setCurrentQuiz((prev) => {
+      return {
+        ...prev,
+        index: 0,
+        totalScore: 0,
+        correctAnswer: allQuiz[0].correct_answer,
+        question: allQuiz[0].question,
+        answersSet: arrayShuffle([
+          ...allQuiz[0].incorrect_answers,
+          allQuiz[0].correct_answer,
+        ]),
+      };
+    });
+  };
+
+  const handleSelectedAnswer = (answer) => {
+    if (answer == currentQuiz.correctAnswer) {
+      setCurrentQuiz((prev) => {
+        return {
+          ...prev,
+          totalScore: prev.totalScore + 1,
+        };
+      });
+    }
   };
 
   return (
     <>
-      {quizOver && <p>Show the Answer. Score: 0</p>}
+      {quizOver && <p>Show the Answer. Score: {currentQuiz.totalScore}</p>}
       {!allQuiz ? (
         <button className="btn btn-success btn-sm" onClick={fetchQuiz}>
           Start Quiz
         </button>
       ) : (
         <QuestionCard
-          quiz={allQuiz[currentQuizQuestionIndex]}
-          index={currentQuizQuestionIndex}
+          quiz={currentQuiz}
           count={allQuiz.length}
           navigateNext={navigateNext}
           quizEnd={quizEnd}
           resetQuiz={resetQuiz}
+          handleSelectedAnswer={handleSelectedAnswer}
         />
       )}
     </>
