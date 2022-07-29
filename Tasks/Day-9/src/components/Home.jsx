@@ -29,6 +29,7 @@ export default function Home() {
         <QuestionCard
           quiz={allQuiz[currentQuizQuestionIndex]}
           index={currentQuizQuestionIndex}
+          count={allQuiz.length}
         />
       )}
     </>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import arrayShuffle from "../utils/arrayShuffle";
 import AnswerCard from "./AnswerCard";
 
-export default function QuestionCard({ quiz, index }) {
+export default function QuestionCard({ quiz, index, count }) {
   // Shuffling Answers
   const { question, correct_answer, incorrect_answers } = quiz;
   const answers = [correct_answer, ...incorrect_answers];
@@ -17,7 +17,9 @@ export default function QuestionCard({ quiz, index }) {
           <div className="col-12 d-flex justify-content-center">
             <div className="card" style={{ width: "18rem" }}>
               <div className="card-body">
-                <h5 className="card-title">Question: {index + 1} / 5</h5>
+                <h5 className="card-title">
+                  Question: {index + 1} / {count}
+                </h5>
                 <p className="card-text">{Parser(question)}</p>
               </div>
               <ul className="list-group list-group-flush">
