@@ -3,6 +3,7 @@ import QuestionCard from "./QuestionCard";
 
 export default function Home() {
   const [allQuiz, setAllQuiz] = useState(null);
+  const [currentQuizQuestionIndex, setCurrentQuizQuestionIndex] = useState(0);
   const fetchQuiz = async () => {
     try {
       let response = await fetch(
@@ -25,7 +26,10 @@ export default function Home() {
           Start Quiz
         </button>
       ) : (
-        <QuestionCard />
+        <QuestionCard
+          quiz={allQuiz[currentQuizQuestionIndex]}
+          index={currentQuizQuestionIndex}
+        />
       )}
     </>
   );
