@@ -6,7 +6,11 @@ export default function Home() {
   const [allQuiz, setAllQuiz] = useState(null);
   const [currentQuizQuestionIndex, setCurrentQuizQuestionIndex] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
-  const [nextButtonDisable, setNextButtonDisable] = useState(true);
+  const [correctAnswer, setCorrectAnswer] = useState(null);
+  const [total, setTotal] = useState({
+    totalCount: 0,
+    totalScore: 0,
+  });
   const fetchQuiz = async () => {
     try {
       let response = await fetch(
@@ -17,6 +21,13 @@ export default function Home() {
       const { results } = await response.json();
       setAllQuiz(results);
       setQuizOver(false);
+      setTotal((prev) => {
+        return {
+          ...prev,
+          totalCount: results.length,
+          totalScore: 0,
+        };
+      });
     } catch (e) {
       setAllQuiz(null);
       console.log("Data cannot be Fetched");
@@ -25,14 +36,16 @@ export default function Home() {
   };
 
   const navigateNext = () => {
-    if (currentQuizQuestionIndex < allQuiz.length - 1)
+    if (currentQuizQuestionIndex < allQuiz.length - 1) {
       setCurrentQuizQuestionIndex((prev) => prev + 1);
+    }
   };
 
   const quizEnd = () => {
     setQuizOver(true);
     setCurrentQuizQuestionIndex(0);
     setAllQuiz(null);
+    setTotal((prev) => prev);
   };
 
   const resetQuiz = () => {
@@ -51,9 +64,25 @@ export default function Home() {
     shufflingAnswers = arrayShuffle(answersSet);
   }
 
+  const userSelected = (answer, correctAnswer) => {
+    if (answer === correctAnswer) {
+      console.log("user is right");
+      setTotal((prev) => {
+        return {
+          ...prev,
+          totalScore: prev.totalScore + 1,
+        };
+      });
+    }
+  };
+
   return (
     <>
-      {quizOver && <p>Show the Answer. Score: 0</p>}
+      {quizOver && (
+        <p>
+          Show the Answer. Score: {total.totalScore} out of {total.totalCount}
+        </p>
+      )}
       {!allQuiz ? (
         <button className="btn btn-success btn-sm" onClick={fetchQuiz}>
           Start Quiz
@@ -66,10 +95,9 @@ export default function Home() {
           navigateNext={navigateNext}
           quizEnd={quizEnd}
           resetQuiz={resetQuiz}
-          nextButtonDisable={nextButtonDisable}
-          setNextButtonDisable={setNextButtonDisable}
           answersSet={answersSet}
           shufflingAnswers={shufflingAnswers}
+          userSelected={userSelected}
         />
       )}
     </>

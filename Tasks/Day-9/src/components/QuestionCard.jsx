@@ -12,23 +12,9 @@ export default function QuestionCard({
   resetQuiz,
   answersSet,
   shufflingAnswers,
-  nextButtonDisable,
-  setNextButtonDisable,
+  userSelected,
 }) {
   const { question, correct_answer, incorrect_answers } = quiz;
-
-  const userSelected = (answer) => {
-    console.log("user selected: " + answer);
-    console.log("correct answer: " + correct_answer);
-    setNextButtonDisable(false);
-    if (answer === correct_answer) {
-      console.log("user is right");
-    } else {
-      console.log("user is not right");
-    }
-  };
-
-  console.log(correct_answer);
   return (
     <>
       <div className="container">
@@ -41,13 +27,14 @@ export default function QuestionCard({
                 </h5>
                 <p className="card-text">{Parser(question)}</p>
               </div>
-              <ListGroup defaultActiveKey="#link2">
+              <ListGroup defaultActiveKey="#0">
                 {shufflingAnswers.map((answer, index) => (
                   <AnswerCard
                     key={index}
                     answer={answer}
                     index={index}
                     userSelected={userSelected}
+                    correctAnswer={correct_answer}
                   />
                 ))}
               </ListGroup>
@@ -56,7 +43,6 @@ export default function QuestionCard({
                   <button
                     onClick={navigateNext}
                     className="btn btn-dark btn-sm"
-                    disabled={nextButtonDisable ? "disabled" : ""}
                   >
                     Next Question
                   </button>
