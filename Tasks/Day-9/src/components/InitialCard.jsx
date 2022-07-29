@@ -17,8 +17,8 @@ export default function InitialCard({
         >
           <Card style={{ width: "22rem" }} className="shadow px-4 py-3">
             <Card.Body>
-              <Card.Title>Quiz Application</Card.Title>
-              <Card.Subtitle className="mb-2 text-muted">
+              <Card.Title className="mb-2">Quiz Application</Card.Title>
+              <Card.Subtitle className="mb-4 text-muted">
                 Developed by Miraz
               </Card.Subtitle>
               <div className="mb-3">
