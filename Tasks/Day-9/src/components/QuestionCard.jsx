@@ -11,8 +11,9 @@ export default function QuestionCard({
   quizEnd,
   answersSet,
 }) {
-  // Shuffling Answers
   const { question, correct_answer, incorrect_answers } = quiz;
+
+  // Shuffling Answers
   const shufflingAnswers = arrayShuffle(answersSet);
   return (
     <>
