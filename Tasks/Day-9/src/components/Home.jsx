@@ -23,7 +23,6 @@ export default function Home() {
   const navigateNext = () => {
     if (currentQuizQuestionIndex < allQuiz.length - 1)
       setCurrentQuizQuestionIndex((prev) => prev + 1);
-    // else setCurrentQuizQuestionIndex(0);
   };
 
   const quizEnd = () => {
