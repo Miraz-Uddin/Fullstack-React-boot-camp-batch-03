@@ -1,13 +1,15 @@
 import Parser from "html-react-parser";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import arrayShuffle from "../utils/arrayShuffle";
 import AnswerCard from "./AnswerCard";
 
 export default function QuestionCard({ quiz, index }) {
-  console.log(quiz);
+  // Shuffling Answers
   const { question, correct_answer, incorrect_answers } = quiz;
-  //   const answers = [correct_answer,...incorrect_answers]
-  const shufflingAnswers = [correct_answer, ...incorrect_answers];
-  //   const shufflingAnswers = arrayShuffle(answers)
+  const answers = [correct_answer, ...incorrect_answers];
+  const [answersSet, setAnswersSet] = useState(answers);
+  const shufflingAnswers = arrayShuffle(answers);
+  useEffect(() => setAnswersSet(shufflingAnswers), []);
   return (
     <>
       <div className="container">
@@ -19,16 +21,13 @@ export default function QuestionCard({ quiz, index }) {
                 <p className="card-text">{Parser(question)}</p>
               </div>
               <ul className="list-group list-group-flush">
-                {shufflingAnswers.map((answer, index) => (
-                  <AnswerCard key={index} answer={answer} />
+                {answersSet.map((answer, index) => (
+                  <AnswerCard key={index} answer={Parser(answer)} />
                 ))}
               </ul>
               <div className="card-body">
                 <a href="#" className="card-link">
-                  Card link
-                </a>
-                <a href="#" className="card-link">
-                  Another link
+                  Next Question
                 </a>
               </div>
             </div>
