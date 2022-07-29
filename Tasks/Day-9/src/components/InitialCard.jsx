@@ -5,6 +5,8 @@ export default function InitialCard({
   fetchQuiz,
   quizCategory,
   setQuizCategory,
+  quizDifficulty,
+  setQuizDifficulty,
 }) {
   return (
     <div className="container">
@@ -60,9 +62,23 @@ export default function InitialCard({
                   </option>
                 </select>
               </div>
+              <div className="mb-3">
+                <label htmlFor="quiz_difficulty">Select Difficulty</label>
+                <select
+                  id="quiz_difficulty"
+                  className="form-select"
+                  value={quizDifficulty}
+                  onChange={(e) => setQuizDifficulty(e.target.value)}
+                >
+                  <option value="any">Any Difficulty</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
               <button
                 className="btn btn-success btn-sm"
-                onClick={() => fetchQuiz(quizCategory)}
+                onClick={() => fetchQuiz(quizCategory, quizDifficulty)}
               >
                 Start Quiz
               </button>

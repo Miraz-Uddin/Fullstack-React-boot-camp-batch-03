@@ -19,11 +19,12 @@ export default function Home() {
   const [currentQuiz, setCurrentQuiz] = useState(currentQuizInitial);
 
   const [quizCategory, setQuizCategory] = useState("18");
+  const [quizDifficulty, setQuizDifficulty] = useState("easy");
 
-  const fetchQuiz = async (category) => {
+  const fetchQuiz = async (category, difficulty) => {
     try {
       let response = await fetch(
-        `https://opentdb.com/api.php?amount=5&category=${category}&difficulty=easy&type=multiple`
+        `https://opentdb.com/api.php?amount=5&category=${category}&difficulty=${difficulty}&type=multiple`
       );
       if (!response.ok)
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -135,6 +136,8 @@ export default function Home() {
           fetchQuiz={fetchQuiz}
           quizCategory={quizCategory}
           setQuizCategory={setQuizCategory}
+          quizDifficulty={quizDifficulty}
+          setQuizDifficulty={setQuizDifficulty}
         />
       )}
     </>
