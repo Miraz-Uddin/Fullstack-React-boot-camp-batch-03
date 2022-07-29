@@ -1,15 +1,19 @@
 import Parser from "html-react-parser";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import arrayShuffle from "../utils/arrayShuffle";
 import AnswerCard from "./AnswerCard";
 
-export default function QuestionCard({ quiz, index, count }) {
+export default function QuestionCard({
+  quiz,
+  index,
+  count,
+  navigateNext,
+  quizEnd,
+  answersSet,
+}) {
   // Shuffling Answers
   const { question, correct_answer, incorrect_answers } = quiz;
-  const answers = [correct_answer, ...incorrect_answers];
-  const [answersSet, setAnswersSet] = useState(answers);
-  const shufflingAnswers = arrayShuffle(answers);
-  useEffect(() => setAnswersSet(shufflingAnswers), []);
+  const shufflingAnswers = arrayShuffle(answersSet);
   return (
     <>
       <div className="container">
@@ -23,15 +27,26 @@ export default function QuestionCard({ quiz, index, count }) {
                 <p className="card-text">{Parser(question)}</p>
               </div>
               <ul className="list-group list-group-flush">
-                {answersSet.map((answer, index) => (
+                {shufflingAnswers.map((answer, index) => (
                   <AnswerCard key={index} answer={Parser(answer)} />
                 ))}
               </ul>
-              <div className="card-body">
-                <a href="#" className="card-link">
-                  Next Question
-                </a>
-              </div>
+              {index + 1 != count ? (
+                <div className="card-body">
+                  <button
+                    onClick={navigateNext}
+                    className="btn btn-dark btn-sm"
+                  >
+                    Next Question
+                  </button>
+                </div>
+              ) : (
+                <div className="card-body">
+                  <button onClick={quizEnd} className="btn btn-info btn-sm">
+                    Finish Quiz
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

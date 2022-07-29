@@ -19,6 +19,17 @@ export default function Home() {
       console.log(e);
     }
   };
+
+  const navigateNext = () => {
+    if (currentQuizQuestionIndex < allQuiz.length - 1)
+      setCurrentQuizQuestionIndex((prev) => prev + 1);
+    else setCurrentQuizQuestionIndex(0);
+  };
+
+  const quizEnd = () => {
+    setCurrentQuizQuestionIndex(0);
+    setAllQuiz(null);
+  };
   return (
     <>
       {!allQuiz ? (
@@ -30,6 +41,12 @@ export default function Home() {
           quiz={allQuiz[currentQuizQuestionIndex]}
           index={currentQuizQuestionIndex}
           count={allQuiz.length}
+          navigateNext={navigateNext}
+          quizEnd={quizEnd}
+          answersSet={[
+            allQuiz[currentQuizQuestionIndex].correct_answer,
+            ...allQuiz[currentQuizQuestionIndex].incorrect_answers,
+          ]}
         />
       )}
     </>
