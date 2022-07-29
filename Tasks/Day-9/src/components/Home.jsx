@@ -18,10 +18,12 @@ export default function Home() {
   };
   const [currentQuiz, setCurrentQuiz] = useState(currentQuizInitial);
 
-  const fetchQuiz = async () => {
+  const [quizTotalMark, setQuizTotalMark] = useState("5");
+
+  const fetchQuiz = async (amount) => {
     try {
       let response = await fetch(
-        "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple"
+        `https://opentdb.com/api.php?amount=${amount}&category=18&difficulty=easy&type=multiple`
       );
       if (!response.ok)
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -129,7 +131,11 @@ export default function Home() {
       ) : quizOver ? (
         <></>
       ) : (
-        <InitialCard fetchQuiz={fetchQuiz} />
+        <InitialCard
+          fetchQuiz={fetchQuiz}
+          quizTotalMark={quizTotalMark}
+          setQuizTotalMark={setQuizTotalMark}
+        />
       )}
     </>
   );
