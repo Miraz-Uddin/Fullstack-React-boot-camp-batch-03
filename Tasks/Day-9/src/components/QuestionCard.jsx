@@ -8,18 +8,12 @@ export default function QuestionCard(props) {
     props.quiz;
   const { count, navigateNext, quizEnd, resetQuiz, handleSelectedAnswer } =
     props;
-  // console.log(selectedAnswer);
-  console.log(correctAnswer);
-  // console.log(answersSet);
-  // console.log(navigateNext)
-  // console.log(quizEnd)
-  // console.log(resetQuiz);
   return (
     <>
       <div className="container">
         <div className="row">
           <div className="col-12 d-flex justify-content-center">
-            <div className="card" style={{ width: "18rem" }}>
+            <div className="card shadow mt-4" style={{ width: "18rem" }}>
               <div className="card-body">
                 <h5 className="card-title">
                   Question: {index + 1} / {count}
@@ -33,6 +27,8 @@ export default function QuestionCard(props) {
                     answer={answer}
                     index={i}
                     handleSelectedAnswer={handleSelectedAnswer}
+                    correctAnswer={correctAnswer}
+                    selectedAnswer={selectedAnswer}
                   />
                 ))}
               </ListGroup>

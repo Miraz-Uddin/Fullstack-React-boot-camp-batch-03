@@ -8,8 +8,9 @@ export default function Home() {
   const [currentQuiz, setCurrentQuiz] = useState({
     index: 0,
     totalScore: 0,
-    correctAnswer: "",
-    question: "",
+    selectedAnswer: null,
+    correctAnswer: null,
+    question: null,
     answersSet: [],
   });
 
@@ -48,6 +49,7 @@ export default function Home() {
         return {
           ...prev,
           index: prev.index + 1,
+          selectedAnswer: null,
           correctAnswer: allQuiz[prev.index + 1].correct_answer,
           question: allQuiz[prev.index + 1].question,
           answersSet: arrayShuffle([
@@ -95,7 +97,13 @@ export default function Home() {
   };
 
   const handleSelectedAnswer = (answer) => {
-    if (answer == currentQuiz.correctAnswer) {
+    setCurrentQuiz((prev) => {
+      return {
+        ...prev,
+        selectedAnswer: answer,
+      };
+    });
+    if (answer === currentQuiz.correctAnswer) {
       setCurrentQuiz((prev) => {
         return {
           ...prev,
@@ -107,7 +115,7 @@ export default function Home() {
 
   return (
     <>
-      {quizOver && <p>Show the Answer. Score: {currentQuiz.totalScore}</p>}
+      {quizOver && <p>Score: {currentQuiz.totalScore}</p>}
       {!allQuiz ? (
         <button className="btn btn-success btn-sm" onClick={fetchQuiz}>
           Start Quiz
