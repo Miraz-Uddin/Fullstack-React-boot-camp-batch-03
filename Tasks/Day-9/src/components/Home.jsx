@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import QuestionCard from "./QuestionCard";
 
 export default function Home() {
   const [allQuiz, setAllQuiz] = useState(null);
@@ -19,10 +20,12 @@ export default function Home() {
   };
   return (
     <>
-      {!allQuiz && (
+      {!allQuiz ? (
         <button className="btn btn-success btn-sm" onClick={fetchQuiz}>
           Start Quiz
         </button>
+      ) : (
+        <QuestionCard />
       )}
     </>
   );
