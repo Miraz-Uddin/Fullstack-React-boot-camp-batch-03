@@ -10,11 +10,9 @@ export default function QuestionCard({
   navigateNext,
   quizEnd,
   resetQuiz,
-  answersSet,
-  shufflingAnswers,
-  userSelected,
 }) {
   const { question, correct_answer, incorrect_answers } = quiz;
+  const answers = [...incorrect_answers, correct_answer];
   return (
     <>
       <div className="container">
@@ -28,14 +26,8 @@ export default function QuestionCard({
                 <p className="card-text">{Parser(question)}</p>
               </div>
               <ListGroup defaultActiveKey="#0">
-                {shufflingAnswers.map((answer, index) => (
-                  <AnswerCard
-                    key={index}
-                    answer={answer}
-                    index={index}
-                    userSelected={userSelected}
-                    correctAnswer={correct_answer}
-                  />
+                {answers.map((answer, index) => (
+                  <AnswerCard key={index} answer={answer} index={index} />
                 ))}
               </ListGroup>
               <div className="card-body d-flex justify-content-between">
