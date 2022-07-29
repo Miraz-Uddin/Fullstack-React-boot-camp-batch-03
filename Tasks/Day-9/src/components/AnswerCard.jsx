@@ -1,15 +1,17 @@
+import Parser from "html-react-parser";
 import React from "react";
+import ListGroup from "react-bootstrap/ListGroup";
 
-export default function AnswerCard({ answer, index }) {
+export default function AnswerCard({ answer, index, userSelected }) {
   return (
     <>
-      {/* <a href="#" class="list-group-item list-group-item-action active" aria-current="true">The current</a>
-            <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-            <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">A disabled link item</a>
-        */}
-      <a href="#" className="list-group-item list-group-item-action">
-        {`(${index + 1})`} {answer}
-      </a>
+      <ListGroup.Item
+        action
+        href={`#link${index}`}
+        onClick={() => userSelected(answer)}
+      >
+        {Parser(answer)}
+      </ListGroup.Item>
     </>
   );
 }

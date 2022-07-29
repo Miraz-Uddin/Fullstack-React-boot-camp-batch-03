@@ -1,6 +1,6 @@
 import Parser from "html-react-parser";
 import React from "react";
-import arrayShuffle from "../utils/arrayShuffle";
+import ListGroup from "react-bootstrap/ListGroup";
 import AnswerCard from "./AnswerCard";
 
 export default function QuestionCard({
@@ -11,11 +11,24 @@ export default function QuestionCard({
   quizEnd,
   resetQuiz,
   answersSet,
+  shufflingAnswers,
+  nextButtonDisable,
+  setNextButtonDisable,
 }) {
   const { question, correct_answer, incorrect_answers } = quiz;
 
-  // Shuffling Answers
-  const shufflingAnswers = arrayShuffle(answersSet);
+  const userSelected = (answer) => {
+    console.log("user selected: " + answer);
+    console.log("correct answer: " + correct_answer);
+    setNextButtonDisable(false);
+    if (answer === correct_answer) {
+      console.log("user is right");
+    } else {
+      console.log("user is not right");
+    }
+  };
+
+  console.log(correct_answer);
   return (
     <>
       <div className="container">
@@ -28,20 +41,22 @@ export default function QuestionCard({
                 </h5>
                 <p className="card-text">{Parser(question)}</p>
               </div>
-              <div className="list-group">
+              <ListGroup defaultActiveKey="#link2">
                 {shufflingAnswers.map((answer, index) => (
                   <AnswerCard
                     key={index}
-                    answer={Parser(answer)}
+                    answer={answer}
                     index={index}
+                    userSelected={userSelected}
                   />
                 ))}
-              </div>
+              </ListGroup>
               <div className="card-body d-flex justify-content-between">
                 {index + 1 != count ? (
                   <button
                     onClick={navigateNext}
                     className="btn btn-dark btn-sm"
+                    disabled={nextButtonDisable ? "disabled" : ""}
                   >
                     Next Question
                   </button>

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import arrayShuffle from "../utils/arrayShuffle";
 import QuestionCard from "./QuestionCard";
 
 export default function Home() {
   const [allQuiz, setAllQuiz] = useState(null);
   const [currentQuizQuestionIndex, setCurrentQuizQuestionIndex] = useState(0);
   const [quizOver, setQuizOver] = useState(false);
+  const [nextButtonDisable, setNextButtonDisable] = useState(true);
   const fetchQuiz = async () => {
     try {
       let response = await fetch(
@@ -38,6 +40,17 @@ export default function Home() {
     setCurrentQuizQuestionIndex(0);
     setAllQuiz(null);
   };
+
+  let answersSet = [];
+  let shufflingAnswers = [];
+  if (allQuiz) {
+    answersSet = [
+      allQuiz[currentQuizQuestionIndex].correct_answer,
+      ...allQuiz[currentQuizQuestionIndex].incorrect_answers,
+    ];
+    shufflingAnswers = arrayShuffle(answersSet);
+  }
+
   return (
     <>
       {quizOver && <p>Show the Answer. Score: 0</p>}
@@ -53,10 +66,10 @@ export default function Home() {
           navigateNext={navigateNext}
           quizEnd={quizEnd}
           resetQuiz={resetQuiz}
-          answersSet={[
-            allQuiz[currentQuizQuestionIndex].correct_answer,
-            ...allQuiz[currentQuizQuestionIndex].incorrect_answers,
-          ]}
+          nextButtonDisable={nextButtonDisable}
+          setNextButtonDisable={setNextButtonDisable}
+          answersSet={answersSet}
+          shufflingAnswers={shufflingAnswers}
         />
       )}
     </>
