@@ -1,3 +1,4 @@
+import Parser from "html-react-parser";
 import React from "react";
 
 export default function QuestionCard({ quiz, index }) {
@@ -11,7 +12,7 @@ export default function QuestionCard({ quiz, index }) {
             <div className="card" style={{ width: "18rem" }}>
               <div className="card-body">
                 <h5 className="card-title">Question: {index + 1} / 5</h5>
-                <p className="card-text">{question}</p>
+                <p className="card-text">{Parser(question)}</p>
               </div>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">An item</li>
