@@ -5,22 +5,31 @@ import GamePlay from "./GamePlay";
 import GameScoreBoard from "./GameScoreBoard";
 // import GameTimer from "./GameTimer";
 
-export default function Home() {
-  const [gameInputs, setGameInputs] = useState({
-    player1Guess: "even",
-    player2Guess: "odd",
-    p1Input1: "",
-    p1Input2: "",
-    p2Input1: "",
-    p2Input2: "",
-  });
+const initialTurns = {
+  player1Turn: true,
+  player2Turn: false,
+};
 
-  const [gameMomentum, setGameMomentum] = useState({
-    isGameStarted: false,
-    isGamePaused: true,
-    isGameReset: true,
-    isGameResumed: true,
-  });
+const initialGameInputs = {
+  player1Guess: "even",
+  player2Guess: "odd",
+  p1Input1: "",
+  p1Input2: "",
+  p2Input1: "",
+  p2Input2: "",
+};
+
+const initialGameMomentum = {
+  isGameStarted: false,
+  isGamePaused: true,
+  isGameReset: true,
+  isGameResumed: true,
+};
+
+export default function Home() {
+  const [turn, setTurn] = useState(initialTurns);
+  const [gameInputs, setGameInputs] = useState(initialGameInputs);
+  const [gameMomentum, setGameMomentum] = useState(initialGameMomentum);
 
   const gameStartBtn = (e) => {
     e.preventDefault();
@@ -64,13 +73,27 @@ export default function Home() {
   const gameResetBtn = (e) => {
     e.preventDefault();
     console.log("Game Reset");
-    setGameMomentum((prev) => {
+    setGameMomentum(() => initialGameMomentum);
+    setGameInputs(() => initialGameInputs);
+    setTurn(() => initialTurns);
+  };
+  const player1SubmitBtn = (e) => {
+    e.preventDefault();
+    setTurn((prev) => {
       return {
         ...prev,
-        isGameReset: true,
-        isGameStarted: false,
-        isGamePaused: true,
-        isGameResumed: true,
+        player1Turn: false,
+        player2Turn: true,
+      };
+    });
+  };
+  const player2SubmitBtn = (e) => {
+    e.preventDefault();
+    setTurn((prev) => {
+      return {
+        ...prev,
+        player1Turn: true,
+        player2Turn: false,
       };
     });
   };
@@ -96,7 +119,13 @@ export default function Home() {
           {/* <GameTimer /> */}
           <div className="row mt-3">
             {isGameStarted && !isGamePaused && (
-              <GamePlay gameInputs={gameInputs} setGameInputs={setGameInputs} />
+              <GamePlay
+                gameInputs={gameInputs}
+                setGameInputs={setGameInputs}
+                turn={turn}
+                player1SubmitBtn={player1SubmitBtn}
+                player2SubmitBtn={player2SubmitBtn}
+              />
             )}
             <GameScoreBoard />
           </div>
