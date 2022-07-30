@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GameScoreBoard() {
   return (
-    <div className="col-md-12 col-lg-7 mb-4">
+    <div className="col-md-12 col-lg-7 mb-4 mx-auto">
       <table className="table text-white">
         <thead>
           <tr>

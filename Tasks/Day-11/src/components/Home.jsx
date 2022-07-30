@@ -74,6 +74,8 @@ export default function Home() {
       };
     });
   };
+  const { isGameReset, isGameStarted, isGamePaused, isGameResumed } =
+    gameMomentum;
   return (
     <>
       <div className="bg">
@@ -93,7 +95,9 @@ export default function Home() {
           />
           {/* <GameTimer /> */}
           <div className="row mt-3">
-            <GamePlay gameInputs={gameInputs} setGameInputs={setGameInputs} />
+            {isGameStarted && !isGamePaused && (
+              <GamePlay gameInputs={gameInputs} setGameInputs={setGameInputs} />
+            )}
             <GameScoreBoard />
           </div>
         </div>

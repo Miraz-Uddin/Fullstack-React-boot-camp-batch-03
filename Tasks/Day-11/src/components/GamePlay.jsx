@@ -88,10 +88,7 @@ export default function GamePlay(gameInputs, setGameInputs) {
           </tr>
         </tbody>
       </table>
-      <table
-        className="table table table-dark table-p2"
-        style={{ display: "none" }}
-      >
+      <table className="table table table-dark table-p2">
         <thead>
           <tr>
             <th colSpan="2" className="text-info text-center">
