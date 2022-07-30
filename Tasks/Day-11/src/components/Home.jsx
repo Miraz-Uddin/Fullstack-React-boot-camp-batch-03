@@ -10,6 +10,13 @@ const initialTurns = {
   player2Turn: false,
 };
 
+const initialGamePoints = {
+  p1PreviousPoints: 10,
+  p1GamePoints: 10,
+  p2PreviousPoints: 10,
+  p2GamePoints: 10,
+};
+
 const initialGameInputs = {
   player1Guess: "even",
   player2Guess: "odd",
@@ -28,6 +35,7 @@ const initialGameMomentum = {
 
 export default function Home() {
   const [turn, setTurn] = useState(initialTurns);
+  const [gamePoints, setGamePoints] = useState(initialGamePoints);
   const [gameInputs, setGameInputs] = useState(initialGameInputs);
   const [gameMomentum, setGameMomentum] = useState(initialGameMomentum);
 
@@ -79,6 +87,30 @@ export default function Home() {
   };
   const player1SubmitBtn = (e) => {
     e.preventDefault();
+    const { player1Guess, p1Input1, p1Input2 } = gameInputs;
+    setGamePoints((prev) => {
+      if (
+        (player1Guess == "even" && parseInt(p1Input2) % 2 == 0) ||
+        (player1Guess == "odd" && parseInt(p1Input2) % 2 != 0)
+      ) {
+        return {
+          ...prev,
+          p1PreviousPoints: prev.p1GamePoints,
+          p2PreviousPoints: prev.p2GamePoints,
+          p1GamePoints: prev.p1GamePoints + parseInt(p1Input2),
+          p2GamePoints: prev.p2GamePoints - parseInt(p1Input2),
+        };
+      } else {
+        return {
+          ...prev,
+          p1PreviousPoints: prev.p1GamePoints,
+          p2PreviousPoints: prev.p2GamePoints,
+          p1GamePoints: prev.p1GamePoints - parseInt(p1Input1),
+          p2GamePoints: prev.p2GamePoints + parseInt(p1Input1),
+        };
+      }
+    });
+    setGameInputs(() => initialGameInputs);
     setTurn((prev) => {
       return {
         ...prev,
@@ -89,6 +121,30 @@ export default function Home() {
   };
   const player2SubmitBtn = (e) => {
     e.preventDefault();
+    const { player2Guess, p2Input1, p2Input2 } = gameInputs;
+    setGamePoints((prev) => {
+      if (
+        (player2Guess == "even" && parseInt(p2Input1) % 2 == 0) ||
+        (player2Guess == "odd" && parseInt(p2Input1) % 2 != 0)
+      ) {
+        return {
+          ...prev,
+          p1PreviousPoints: prev.p1GamePoints,
+          p2PreviousPoints: prev.p2GamePoints,
+          p1GamePoints: prev.p1GamePoints - parseInt(p2Input1),
+          p2GamePoints: prev.p2GamePoints + parseInt(p2Input1),
+        };
+      } else {
+        return {
+          ...prev,
+          p1PreviousPoints: prev.p1GamePoints,
+          p2PreviousPoints: prev.p2GamePoints,
+          p1GamePoints: prev.p1GamePoints + parseInt(p2Input2),
+          p2GamePoints: prev.p2GamePoints - parseInt(p2Input2),
+        };
+      }
+    });
+    setGameInputs(() => initialGameInputs);
     setTurn((prev) => {
       return {
         ...prev,
@@ -99,6 +155,7 @@ export default function Home() {
   };
   const { isGameReset, isGameStarted, isGamePaused, isGameResumed } =
     gameMomentum;
+  console.log(gamePoints);
   return (
     <>
       <div className="bg">

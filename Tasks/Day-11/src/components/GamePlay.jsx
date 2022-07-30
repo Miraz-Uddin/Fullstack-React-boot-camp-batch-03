@@ -9,15 +9,6 @@ export default function GamePlay({
 }) {
   const { player1Guess, player2Guess, p1Input1, p1Input2, p2Input1, p2Input2 } =
     gameInputs;
-  const {
-    setPlayer1Guess,
-    setPlayer2Guess,
-    setP1Input1,
-    setP1Input2,
-    setP2Input1,
-    setP2Input2,
-  } = setGameInputs;
-  // console.log(player1Guess)
   const { player1Turn, player2Turn } = turn;
   return (
     <div className="col-md-12 col-lg-5 mb-4">
@@ -47,7 +38,14 @@ export default function GamePlay({
                     className="form-control"
                     placeholder="Insert (Between 1 - 9)"
                     value={p1Input1}
-                    onChange={(e) => setP1Input1(e.target.value)}
+                    onChange={(e) => {
+                      return setGameInputs((prev) => {
+                        return {
+                          ...prev,
+                          p1Input1: e.target.value,
+                        };
+                      });
+                    }}
                     autoComplete="on"
                   />
                 </form>
@@ -60,7 +58,14 @@ export default function GamePlay({
                     className="form-control"
                     placeholder="Insert (Between 1 - 9)"
                     value={p1Input2}
-                    onChange={(e) => setP1Input2(e.target.value)}
+                    onChange={(e) => {
+                      return setGameInputs((prev) => {
+                        return {
+                          ...prev,
+                          p1Input2: e.target.value,
+                        };
+                      });
+                    }}
                     autoComplete="on"
                   />
                 </form>
@@ -77,7 +82,14 @@ export default function GamePlay({
                     className="form-select"
                     style={{ width: "99px", textAlign: "center" }}
                     value={player1Guess}
-                    onChange={(e) => setPlayer1Guess(e.target.value)}
+                    onChange={(e) => {
+                      return setGameInputs((prev) => {
+                        return {
+                          ...prev,
+                          player1Guess: e.target.value,
+                        };
+                      });
+                    }}
                   >
                     <option value="odd">Odd</option>
                     <option value="even">Even</option>
@@ -126,7 +138,14 @@ export default function GamePlay({
                     className="form-control"
                     placeholder="Insert (Between 1 - 9)"
                     value={p2Input1}
-                    onChange={(e) => setP2Input1(e.target.value)}
+                    onChange={(e) => {
+                      return setGameInputs((prev) => {
+                        return {
+                          ...prev,
+                          p2Input1: e.target.value,
+                        };
+                      });
+                    }}
                     autoComplete="on"
                   />
                 </form>
@@ -139,7 +158,14 @@ export default function GamePlay({
                     className="form-control"
                     placeholder="Insert (Between 1 - 9)"
                     value={p2Input2}
-                    onChange={(e) => setP2Input2(e.target.value)}
+                    onChange={(e) => {
+                      return setGameInputs((prev) => {
+                        return {
+                          ...prev,
+                          p2Input2: e.target.value,
+                        };
+                      });
+                    }}
                     autoComplete="on"
                   />
                 </form>
@@ -155,7 +181,14 @@ export default function GamePlay({
                     className="form-select"
                     style={{ width: "99px", textAlign: "center" }}
                     value={player2Guess}
-                    onChange={(e) => setPlayer2Guess(e.target.value)}
+                    onChange={(e) => {
+                      return setGameInputs((prev) => {
+                        return {
+                          ...prev,
+                          player2Guess: e.target.value,
+                        };
+                      });
+                    }}
                   >
                     <option value="odd">Odd</option>
                     <option value="even">Even</option>
