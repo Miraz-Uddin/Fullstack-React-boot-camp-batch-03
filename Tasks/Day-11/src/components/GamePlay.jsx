@@ -77,11 +77,11 @@ export default function GamePlay(gameInputs, setGameInputs) {
               </div>
             </td>
           </tr>
-          <tr id="p1SubmitRow" className="d-none">
+          <tr id="p1SubmitRow">
             <td colSpan="2">
               <div className="d-flex justify-content-center">
                 <button className="btn btn-success btn-sm" id="p1Submit">
-                  Submit
+                  Player 1 Submit
                 </button>
               </div>
             </td>
@@ -149,11 +149,11 @@ export default function GamePlay(gameInputs, setGameInputs) {
               </div>
             </td>
           </tr>
-          <tr id="p2SubmitRow" className="d-none">
+          <tr id="p2SubmitRow">
             <td colSpan="2">
               <div className="d-flex justify-content-center">
                 <button className="btn btn-success btn-sm" id="p2Submit">
-                  Submit
+                  Player 2 Submit
                 </button>
               </div>
             </td>
