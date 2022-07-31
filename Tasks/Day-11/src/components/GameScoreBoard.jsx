@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function GameScoreBoard() {
+export default function GameScoreBoard({ gameScore }) {
   return (
     <div className="col-md-12 col-lg-7 mb-4 mx-auto">
       <table className="table text-white">
@@ -13,20 +13,28 @@ export default function GameScoreBoard() {
           </tr>
         </thead>
         <tbody id="display_board">
-          <tr>
-            <td>
-              <span>Initial</span>
-            </td>
-            <td>
-              <span>(EVEN)</span>
-            </td>
-            <td>
-              Previous: <span>0</span>, Current: <span>10</span>
-            </td>
-            <td>
-              Previous: <span>0</span>, Current: <span>10</span>
-            </td>
-          </tr>
+          {gameScore
+            .filter((x, i) => i > 1)
+            .map((item, index) => {
+              return (
+                <tr key={index}>
+                  <td>
+                    <span>{item.turn}</span>
+                  </td>
+                  <td>
+                    <span>{`(${item.guess})`}</span>
+                  </td>
+                  <td>
+                    Previous: <span>{item.p1Previous}</span>, Current:{" "}
+                    <span>{item.p1Current}</span>
+                  </td>
+                  <td>
+                    Previous: <span>{item.p2Previous}</span>, Current:{" "}
+                    <span>{item.p2Current}</span>
+                  </td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>

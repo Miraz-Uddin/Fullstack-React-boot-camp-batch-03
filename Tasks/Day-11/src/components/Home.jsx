@@ -11,9 +11,9 @@ const initialTurns = {
 };
 
 const initialGamePoints = {
-  p1PreviousPoints: 10,
+  p1PreviousPoints: 0,
   p1GamePoints: 10,
-  p2PreviousPoints: 10,
+  p2PreviousPoints: 0,
   p2GamePoints: 10,
 };
 
@@ -38,10 +38,19 @@ export default function Home() {
   const [gamePoints, setGamePoints] = useState(initialGamePoints);
   const [gameInputs, setGameInputs] = useState(initialGameInputs);
   const [gameMomentum, setGameMomentum] = useState(initialGameMomentum);
+  const [gameScore, setGameScore] = useState([
+    {
+      turn: "Initial",
+      guess: "EVEN",
+      p1Previous: gamePoints.p1PreviousPoints,
+      p1Current: gamePoints.p1GamePoints,
+      p2Previous: gamePoints.p2PreviousPoints,
+      p2Current: gamePoints.p2GamePoints,
+    },
+  ]);
 
   const gameStartBtn = (e) => {
     e.preventDefault();
-    console.log("Game Started");
     setGameMomentum((prev) => {
       return {
         ...prev,
@@ -111,6 +120,19 @@ export default function Home() {
       }
     });
     setGameInputs(() => initialGameInputs);
+    setGameScore((prev) => {
+      return [
+        ...prev,
+        {
+          turn: "Player 2",
+          guess: player1Guess,
+          p1Previous: gamePoints.p1PreviousPoints,
+          p1Current: gamePoints.p1GamePoints,
+          p2Previous: gamePoints.p2PreviousPoints,
+          p2Current: gamePoints.p2GamePoints,
+        },
+      ];
+    });
     setTurn((prev) => {
       return {
         ...prev,
@@ -152,10 +174,22 @@ export default function Home() {
         player2Turn: false,
       };
     });
+    setGameScore((prev) => {
+      return [
+        ...prev,
+        {
+          turn: "Player 1",
+          guess: player2Guess,
+          p1Previous: gamePoints.p1PreviousPoints,
+          p1Current: gamePoints.p1GamePoints,
+          p2Previous: gamePoints.p2PreviousPoints,
+          p2Current: gamePoints.p2GamePoints,
+        },
+      ];
+    });
   };
   const { isGameReset, isGameStarted, isGamePaused, isGameResumed } =
     gameMomentum;
-  console.log(gamePoints);
   return (
     <>
       <div className="bg">
@@ -184,7 +218,7 @@ export default function Home() {
                 player2SubmitBtn={player2SubmitBtn}
               />
             )}
-            <GameScoreBoard />
+            <GameScoreBoard gameScore={gameScore} />
           </div>
         </div>
       </div>
