@@ -12,28 +12,26 @@ export default function GameScoreBoard({ gameScore }) {
           </tr>
         </thead>
         <tbody id="display_board">
-          {gameScore
-            .filter((x, i) => i > 1)
-            .map((item, index) => {
-              {
-                /* console.log(index); */
-              }
-              return (
-                <tr key={index}>
-                  <td>
-                    <span>{index == 0 ? "--" : item.turn}</span>
-                  </td>
-                  <td>
-                    Previous: <span>{item.p1Previous}</span>, Current:{" "}
-                    <span>{item.p1Current}</span>
-                  </td>
-                  <td>
-                    Previous: <span>{item.p2Previous}</span>, Current:{" "}
-                    <span>{item.p2Current}</span>
-                  </td>
-                </tr>
-              );
-            })}
+          {gameScore.map((item, index) => {
+            {
+              /* console.log(index); */
+            }
+            return (
+              <tr key={index}>
+                <td>
+                  <span>{index == 0 ? "--" : item.turn}</span>
+                </td>
+                <td>
+                  Previous: <span>{item.p1Previous}</span>, Current:{" "}
+                  <span>{item.p1Current}</span>
+                </td>
+                <td>
+                  Previous: <span>{item.p2Previous}</span>, Current:{" "}
+                  <span>{item.p2Current}</span>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

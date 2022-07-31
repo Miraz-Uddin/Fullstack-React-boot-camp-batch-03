@@ -59,10 +59,21 @@ export default function Home() {
         isGameResumed: true,
       };
     });
+    setTurn(() => initialTurns);
+    setGamePoints(() => initialGamePoints);
+    setGameInputs(() => initialGameInputs);
+    setGameScore(() => [
+      {
+        turn: "--",
+        p1Previous: gamePoints.p1PreviousPoints,
+        p1Current: gamePoints.p1GamePoints,
+        p2Previous: gamePoints.p2PreviousPoints,
+        p2Current: gamePoints.p2GamePoints,
+      },
+    ]);
   };
   const gamePauseBtn = (e) => {
     e.preventDefault();
-    console.log("Game Paused");
     setGameMomentum((prev) => {
       return {
         ...prev,
@@ -75,7 +86,6 @@ export default function Home() {
   };
   const gameResumeBtn = (e) => {
     e.preventDefault();
-    console.log("Game Resumed");
     setGameMomentum((prev) => {
       return {
         ...prev,
@@ -89,9 +99,19 @@ export default function Home() {
   const gameResetBtn = (e) => {
     e.preventDefault();
     console.log("Game Reset");
-    setGameMomentum(() => initialGameMomentum);
-    setGameInputs(() => initialGameInputs);
     setTurn(() => initialTurns);
+    setGamePoints(() => initialGamePoints);
+    setGameInputs(() => initialGameInputs);
+    setGameMomentum(() => initialGameMomentum);
+    setGameScore(() => [
+      {
+        turn: "--",
+        p1Previous: gamePoints.p1PreviousPoints,
+        p1Current: gamePoints.p1GamePoints,
+        p2Previous: gamePoints.p2PreviousPoints,
+        p2Current: gamePoints.p2GamePoints,
+      },
+    ]);
   };
   const player1SubmitBtn = (e) => {
     e.preventDefault();
@@ -206,7 +226,7 @@ export default function Home() {
                 player2SubmitBtn={player2SubmitBtn}
               />
             )}
-            <GameScoreBoard gameScore={gameScore} />
+            {isGameStarted && <GameScoreBoard gameScore={gameScore} />}
           </div>
         </div>
       </div>
