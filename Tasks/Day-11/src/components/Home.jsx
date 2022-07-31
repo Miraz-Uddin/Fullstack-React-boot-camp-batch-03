@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import GameControllers from "./GameControllers";
 import GamePlay from "./GamePlay";
-// import GameRules from "./GameRules";
 import GameScoreBoard from "./GameScoreBoard";
+// import GameRules from "./GameRules";
 // import GameTimer from "./GameTimer";
 
 const initialTurns = {
@@ -41,7 +41,6 @@ export default function Home() {
   const [gameScore, setGameScore] = useState([
     {
       turn: "Initial",
-      guess: "EVEN",
       p1Previous: gamePoints.p1PreviousPoints,
       p1Current: gamePoints.p1GamePoints,
       p2Previous: gamePoints.p2PreviousPoints,
@@ -120,19 +119,6 @@ export default function Home() {
       }
     });
     setGameInputs(() => initialGameInputs);
-    setGameScore((prev) => {
-      return [
-        ...prev,
-        {
-          turn: "Player 2",
-          guess: player1Guess,
-          p1Previous: gamePoints.p1PreviousPoints,
-          p1Current: gamePoints.p1GamePoints,
-          p2Previous: gamePoints.p2PreviousPoints,
-          p2Current: gamePoints.p2GamePoints,
-        },
-      ];
-    });
     setTurn((prev) => {
       return {
         ...prev,
@@ -174,12 +160,16 @@ export default function Home() {
         player2Turn: false,
       };
     });
+  };
+
+  const { isGameReset, isGameStarted, isGamePaused, isGameResumed } =
+    gameMomentum;
+  useEffect(() => {
     setGameScore((prev) => {
       return [
         ...prev,
         {
-          turn: "Player 1",
-          guess: player2Guess,
+          turn: turn.player1Turn ? "Player 2" : "Player 1",
           p1Previous: gamePoints.p1PreviousPoints,
           p1Current: gamePoints.p1GamePoints,
           p2Previous: gamePoints.p2PreviousPoints,
@@ -187,9 +177,7 @@ export default function Home() {
         },
       ];
     });
-  };
-  const { isGameReset, isGameStarted, isGamePaused, isGameResumed } =
-    gameMomentum;
+  }, [turn, gamePoints]);
   return (
     <>
       <div className="bg">

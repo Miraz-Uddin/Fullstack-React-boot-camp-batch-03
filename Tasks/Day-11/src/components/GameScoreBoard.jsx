@@ -7,7 +7,6 @@ export default function GameScoreBoard({ gameScore }) {
         <thead>
           <tr>
             <th>Turn</th>
-            <th>Guess</th>
             <th>PLayer 1 Points</th>
             <th>PLayer 2 Points</th>
           </tr>
@@ -16,13 +15,13 @@ export default function GameScoreBoard({ gameScore }) {
           {gameScore
             .filter((x, i) => i > 1)
             .map((item, index) => {
+              {
+                /* console.log(index); */
+              }
               return (
                 <tr key={index}>
                   <td>
-                    <span>{item.turn}</span>
-                  </td>
-                  <td>
-                    <span>{`(${item.guess})`}</span>
+                    <span>{index == 0 ? "--" : item.turn}</span>
                   </td>
                   <td>
                     Previous: <span>{item.p1Previous}</span>, Current:{" "}
