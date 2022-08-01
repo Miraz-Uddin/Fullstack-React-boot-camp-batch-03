@@ -34,6 +34,8 @@ const initialGameMomentum = {
 };
 
 export default function Home() {
+  const [p1SubmitBtnActive, setP1SubmitBtnActive] = useState(false);
+  const [p2SubmitBtnActive, setP2SubmitBtnActive] = useState(false);
   const [turn, setTurn] = useState(initialTurns);
   const [gamePoints, setGamePoints] = useState(initialGamePoints);
   const [gameInputs, setGameInputs] = useState(initialGameInputs);
@@ -224,6 +226,10 @@ export default function Home() {
                 turn={turn}
                 player1SubmitBtn={player1SubmitBtn}
                 player2SubmitBtn={player2SubmitBtn}
+                p1SubmitBtnActive={p1SubmitBtnActive}
+                p2SubmitBtnActive={p2SubmitBtnActive}
+                setP1SubmitBtnActive={setP1SubmitBtnActive}
+                setP2SubmitBtnActive={setP2SubmitBtnActive}
               />
             )}
             {isGameStarted && <GameScoreBoard gameScore={gameScore} />}

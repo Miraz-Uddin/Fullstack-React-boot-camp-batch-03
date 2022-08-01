@@ -1,4 +1,5 @@
 import React from "react";
+import TakeOnlyInteger from "../utils/TakeOnlyInteger";
 
 export default function GamePlay({
   gameInputs,
@@ -6,6 +7,10 @@ export default function GamePlay({
   turn,
   player1SubmitBtn,
   player2SubmitBtn,
+  p1SubmitBtnActive,
+  p2SubmitBtnActive,
+  setP1SubmitBtnActive,
+  setP2SubmitBtnActive,
 }) {
   const { player1Guess, player2Guess, p1Input1, p1Input2, p2Input1, p2Input2 } =
     gameInputs;
@@ -39,12 +44,13 @@ export default function GamePlay({
                     placeholder="Insert (Between 1 - 9)"
                     value={p1Input1}
                     onChange={(e) => {
-                      return setGameInputs((prev) => {
-                        return {
-                          ...prev,
-                          p1Input1: e.target.value,
-                        };
-                      });
+                      return TakeOnlyInteger(
+                        "p1Input1",
+                        setGameInputs,
+                        e.target.value,
+                        p1Input2,
+                        setP1SubmitBtnActive
+                      );
                     }}
                     autoComplete="on"
                   />
@@ -59,12 +65,13 @@ export default function GamePlay({
                     placeholder="Insert (Between 1 - 9)"
                     value={p1Input2}
                     onChange={(e) => {
-                      return setGameInputs((prev) => {
-                        return {
-                          ...prev,
-                          p1Input2: e.target.value,
-                        };
-                      });
+                      return TakeOnlyInteger(
+                        "p1Input2",
+                        setGameInputs,
+                        e.target.value,
+                        p1Input1,
+                        setP1SubmitBtnActive
+                      );
                     }}
                     autoComplete="on"
                   />
@@ -101,7 +108,9 @@ export default function GamePlay({
               <td colSpan="2">
                 <div className="d-flex justify-content-center">
                   <button
-                    className="btn btn-success btn-sm"
+                    className={`btn btn-success btn-sm ${
+                      !p1SubmitBtnActive ? "disabled-button" : ""
+                    }`}
                     id="p1Submit"
                     onClick={player1SubmitBtn}
                   >
@@ -139,12 +148,13 @@ export default function GamePlay({
                     placeholder="Insert (Between 1 - 9)"
                     value={p2Input1}
                     onChange={(e) => {
-                      return setGameInputs((prev) => {
-                        return {
-                          ...prev,
-                          p2Input1: e.target.value,
-                        };
-                      });
+                      return TakeOnlyInteger(
+                        "p2Input1",
+                        setGameInputs,
+                        e.target.value,
+                        p2Input2,
+                        setP2SubmitBtnActive
+                      );
                     }}
                     autoComplete="on"
                   />
@@ -159,12 +169,13 @@ export default function GamePlay({
                     placeholder="Insert (Between 1 - 9)"
                     value={p2Input2}
                     onChange={(e) => {
-                      return setGameInputs((prev) => {
-                        return {
-                          ...prev,
-                          p2Input2: e.target.value,
-                        };
-                      });
+                      return TakeOnlyInteger(
+                        "p2Input2",
+                        setGameInputs,
+                        e.target.value,
+                        p2Input1,
+                        setP2SubmitBtnActive
+                      );
                     }}
                     autoComplete="on"
                   />
@@ -200,7 +211,9 @@ export default function GamePlay({
               <td colSpan="2">
                 <div className="d-flex justify-content-center">
                   <button
-                    className="btn btn-success btn-sm"
+                    className={`btn btn-success btn-sm ${
+                      !p2SubmitBtnActive ? "disabled-button" : ""
+                    }`}
                     id="p2Submit"
                     onClick={player2SubmitBtn}
                   >
