@@ -264,6 +264,7 @@ export default function Home() {
                 p2SubmitBtnActive={p2SubmitBtnActive}
                 setP1SubmitBtnActive={setP1SubmitBtnActive}
                 setP2SubmitBtnActive={setP2SubmitBtnActive}
+                gamePoints={gamePoints}
               />
             )}
             {isGameStarted && !isGameEnd && (

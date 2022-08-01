@@ -11,10 +11,12 @@ export default function GamePlay({
   p2SubmitBtnActive,
   setP1SubmitBtnActive,
   setP2SubmitBtnActive,
+  gamePoints,
 }) {
   const { player1Guess, player2Guess, p1Input1, p1Input2, p2Input1, p2Input2 } =
     gameInputs;
   const { player1Turn, player2Turn } = turn;
+  const { p1GamePoints, p2GamePoints } = gamePoints;
   return (
     <div className="col-md-12 col-lg-5 mb-4">
       {player1Turn && (
@@ -41,10 +43,12 @@ export default function GamePlay({
                     id="p1Input1"
                     type="password"
                     className="form-control"
-                    placeholder="Insert (Between 1 - 9)"
+                    placeholder={`Insert min:1 , max:${p1GamePoints}`}
                     value={p1Input1}
                     onChange={(e) => {
                       return TakeOnlyInteger(
+                        p1GamePoints,
+                        p2GamePoints,
                         "p1Input1",
                         setGameInputs,
                         e.target.value,
@@ -62,10 +66,12 @@ export default function GamePlay({
                     id="p1Input2"
                     type="password"
                     className="form-control"
-                    placeholder="Insert (Between 1 - 9)"
+                    placeholder={`Insert min:1 , max:${p2GamePoints}`}
                     value={p1Input2}
                     onChange={(e) => {
                       return TakeOnlyInteger(
+                        p2GamePoints,
+                        p1GamePoints,
                         "p1Input2",
                         setGameInputs,
                         e.target.value,
@@ -145,10 +151,12 @@ export default function GamePlay({
                     id="p2Input1"
                     type="password"
                     className="form-control"
-                    placeholder="Insert (Between 1 - 9)"
+                    placeholder={`Insert min:1 , max:${p1GamePoints}`}
                     value={p2Input1}
                     onChange={(e) => {
                       return TakeOnlyInteger(
+                        p1GamePoints,
+                        p2GamePoints,
                         "p2Input1",
                         setGameInputs,
                         e.target.value,
@@ -166,10 +174,12 @@ export default function GamePlay({
                     id="p2Input2"
                     type="password"
                     className="form-control"
-                    placeholder="Insert (Between 1 - 9)"
+                    placeholder={`Insert min:1 , max:${p2GamePoints}`}
                     value={p2Input2}
                     onChange={(e) => {
                       return TakeOnlyInteger(
+                        p2GamePoints,
+                        p1GamePoints,
                         "p2Input2",
                         setGameInputs,
                         e.target.value,

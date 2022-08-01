@@ -1,4 +1,16 @@
+/**
+ * @param {Maximum Value of 1st input field} maxValue1
+ * @param {Maximum Value of 2nd input field} maxValue2
+ * @param {Input field Marker} pointer
+ * @param {Setter Function of Input Field} inputValueChanger
+ * @param {Get the Value of 1st input field} value1
+ * @param {Get the Value of 2nd input field} value2
+ * @param {Submit Button Toggler} btnToggle
+ */
+
 export default function TakeOnlyInteger(
+  maxValue1,
+  maxValue2,
   pointer,
   inputValueChanger,
   value1,
@@ -21,10 +33,11 @@ export default function TakeOnlyInteger(
     Boolean(value2) == true &&
     value2 >= 0 &&
     value1[0] != 0 &&
-    value2[0] != 0;
-  if (check) {
-    btnToggle(true);
-  } else {
-    btnToggle(false);
-  }
+    value2[0] != 0 &&
+    parseInt(value1) > 0 &&
+    parseInt(value1) <= maxValue1 &&
+    parseInt(value2) > 0 &&
+    parseInt(value2) <= maxValue2;
+  btnToggle(false);
+  if (check) btnToggle(true);
 }
