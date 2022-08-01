@@ -36,6 +36,7 @@ const initialGameMomentum = {
 };
 
 export default function Home() {
+  const [winner, setWinner] = useState(null);
   const [p1SubmitBtnActive, setP1SubmitBtnActive] = useState(false);
   const [p2SubmitBtnActive, setP2SubmitBtnActive] = useState(false);
   const [turn, setTurn] = useState(initialTurns);
@@ -200,6 +201,8 @@ export default function Home() {
       if (gamePoints.p1GamePoints == 0 || gamePoints.p2GamePoints == 0) {
         setTurn(() => initialTurns);
         setGameInputs(() => initialGameInputs);
+        setWinner(gamePoints.p1GamePoints == 0 ? "Player 2" : "Player 1");
+        setGamePoints(() => initialGamePoints);
         setP1SubmitBtnActive(false);
         setP2SubmitBtnActive(false);
         setGameMomentum((prev) => {
@@ -263,7 +266,7 @@ export default function Home() {
           </div>
           {isGameEnd && (
             <div className="row mt-3 d-flex justify-content-center">
-              <GameFinalResult gamePoints={gamePoints} />
+              <GameFinalResult winner={winner} />
             </div>
           )}
         </div>

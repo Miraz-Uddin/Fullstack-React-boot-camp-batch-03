@@ -7,7 +7,7 @@ export default function GameControllers({
   gameResetBtn,
   gameMomentum,
 }) {
-  const { isGameReset, isGameStarted, isGamePaused, isGameResumed } =
+  const { isGameReset, isGameStarted, isGamePaused, isGameResumed, isGameEnd } =
     gameMomentum;
   return (
     <div className="row mt-3">
@@ -23,7 +23,7 @@ export default function GameControllers({
               id="start"
               onClick={gameStartBtn}
             >
-              Start Game
+              {isGameEnd ? "Play Again" : "Start Game"}
             </button>
           )}
 
