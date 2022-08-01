@@ -25,15 +25,15 @@ export default function GamePlay({
             <tr>
               <th colSpan="2" className="text-info text-center">
                 <h3>
-                  <b>PLayer 1 Turn</b>
+                  <b>Player 1's Turn</b>
                 </h3>
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="text-primary text-center">PLayer 1's Input</td>
-              <td className="text-primary text-center">PLayer 2's Input</td>
+              <td className="text-primary text-center">Player 1's Input</td>
+              <td className="text-primary text-center">Player 2's Input</td>
             </tr>
 
             <tr>
@@ -134,15 +134,15 @@ export default function GamePlay({
             <tr>
               <th colSpan="2" className="text-info text-center">
                 <h3>
-                  <b>PLayer 2 Turn</b>
+                  <b>Player 2 Turn</b>
                 </h3>
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="text-primary text-center">PLayer 1's Input</td>
-              <td className="text-primary text-center">PLayer 2's Input</td>
+              <td className="text-primary text-center">Player 1's Input</td>
+              <td className="text-primary text-center">Player 2's Input</td>
             </tr>
             <tr>
               <td>

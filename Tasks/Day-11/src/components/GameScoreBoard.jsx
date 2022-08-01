@@ -8,8 +8,8 @@ export default function GameScoreBoard({ gameScore }) {
         <thead>
           <tr>
             <th>Turn</th>
-            <th>PLayer 1 Points</th>
-            <th>PLayer 2 Points</th>
+            <th>Player 1 Points</th>
+            <th>Player 2 Points</th>
           </tr>
         </thead>
         <tbody id="display_board">
