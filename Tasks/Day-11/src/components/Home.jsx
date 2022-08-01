@@ -157,6 +157,8 @@ export default function Home() {
         player2Turn: true,
       };
     });
+    setP1SubmitBtnActive(false);
+    setP2SubmitBtnActive(false);
   };
   const player2SubmitBtn = (e) => {
     e.preventDefault();
@@ -191,6 +193,8 @@ export default function Home() {
         player2Turn: false,
       };
     });
+    setP1SubmitBtnActive(false);
+    setP2SubmitBtnActive(false);
   };
 
   const { isGameReset, isGameStarted, isGamePaused, isGameResumed, isGameEnd } =
