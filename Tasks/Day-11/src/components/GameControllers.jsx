@@ -27,7 +27,7 @@ export default function GameControllers({
             </button>
           )}
 
-          {!isGamePaused && (
+          {/* {!isGamePaused && (
             <button
               type="button"
               className="btn btn-info"
@@ -47,7 +47,7 @@ export default function GameControllers({
             >
               Resume
             </button>
-          )}
+          )} */}
 
           {!isGameReset && (
             <button
