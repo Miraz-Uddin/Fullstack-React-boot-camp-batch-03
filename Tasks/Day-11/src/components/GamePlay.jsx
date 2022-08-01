@@ -41,7 +41,7 @@ export default function GamePlay({
                 <form>
                   <input
                     id="p1Input1"
-                    type="password"
+                    type="text"
                     className="form-control"
                     placeholder={`Insert min:1 , max:${p1GamePoints}`}
                     value={p1Input1}
@@ -172,7 +172,7 @@ export default function GamePlay({
                 <form>
                   <input
                     id="p2Input2"
-                    type="password"
+                    type="text"
                     className="form-control"
                     placeholder={`Insert min:1 , max:${p2GamePoints}`}
                     value={p2Input2}
