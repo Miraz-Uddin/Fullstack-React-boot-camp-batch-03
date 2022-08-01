@@ -64,6 +64,8 @@ export default function Home() {
     setTurn(() => initialTurns);
     setGamePoints(() => initialGamePoints);
     setGameInputs(() => initialGameInputs);
+    setP1SubmitBtnActive(false);
+    setP2SubmitBtnActive(false);
     setGameScore(() => [
       {
         turn: "--",
@@ -104,6 +106,8 @@ export default function Home() {
     setTurn(() => initialTurns);
     setGamePoints(() => initialGamePoints);
     setGameInputs(() => initialGameInputs);
+    setP1SubmitBtnActive(false);
+    setP2SubmitBtnActive(false);
     setGameMomentum(() => initialGameMomentum);
     setGameScore(() => [
       {
