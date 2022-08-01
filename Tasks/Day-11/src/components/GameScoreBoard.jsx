@@ -13,9 +13,6 @@ export default function GameScoreBoard({ gameScore }) {
         </thead>
         <tbody id="display_board">
           {gameScore.map((item, index) => {
-            {
-              /* console.log(index); */
-            }
             return (
               <tr key={index}>
                 <td>

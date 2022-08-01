@@ -108,7 +108,6 @@ export default function Home() {
   };
   const gameResetBtn = (e) => {
     e.preventDefault();
-    console.log("Game Reset");
     setTurn(() => initialTurns);
     setGamePoints(() => initialGamePoints);
     setGameInputs(() => initialGameInputs);
