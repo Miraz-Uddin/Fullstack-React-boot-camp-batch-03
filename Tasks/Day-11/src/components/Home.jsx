@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import GameControllers from "./GameControllers";
 import GameFinalResult from "./GameFinalResult";
 import GamePlay from "./GamePlay";
+import GameRules from "./GameRules";
 import GameScoreBoard from "./GameScoreBoard";
-// import GameRules from "./GameRules";
 // import GameTimer from "./GameTimer";
 
 const initialTurns = {
@@ -243,7 +243,7 @@ export default function Home() {
               <h1 className="text-white text-center">Squid Game - gGanbu</h1>
             </div>
           </div>
-          {/* <GameRules /> */}
+          <GameRules />
           <GameControllers
             gameStartBtn={gameStartBtn}
             gamePauseBtn={gamePauseBtn}

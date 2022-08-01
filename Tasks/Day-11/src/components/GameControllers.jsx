@@ -52,7 +52,7 @@ export default function GameControllers({
           {!isGameReset && (
             <button
               type="button"
-              className="btn btn-warning"
+              className="btn btn-danger"
               id="reset"
               onClick={gameResetBtn}
             >
