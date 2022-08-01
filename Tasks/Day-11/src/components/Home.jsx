@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GameControllers from "./GameControllers";
+import GameFinalResult from "./GameFinalResult";
 import GamePlay from "./GamePlay";
 import GameScoreBoard from "./GameScoreBoard";
 // import GameRules from "./GameRules";
@@ -31,6 +32,7 @@ const initialGameMomentum = {
   isGamePaused: true,
   isGameReset: true,
   isGameResumed: true,
+  isGameEnd: false,
 };
 
 export default function Home() {
@@ -59,6 +61,7 @@ export default function Home() {
         isGamePaused: false,
         isGameReset: false,
         isGameResumed: true,
+        isGameEnd: false,
       };
     });
     setTurn(() => initialTurns);
@@ -85,6 +88,7 @@ export default function Home() {
         isGameStarted: true,
         isGameReset: false,
         isGameResumed: false,
+        isGameEnd: false,
       };
     });
   };
@@ -97,6 +101,7 @@ export default function Home() {
         isGameStarted: true,
         isGameReset: false,
         isGameResumed: true,
+        isGameEnd: false,
       };
     });
   };
@@ -188,10 +193,26 @@ export default function Home() {
     });
   };
 
-  const { isGameReset, isGameStarted, isGamePaused, isGameResumed } =
+  const { isGameReset, isGameStarted, isGamePaused, isGameResumed, isGameEnd } =
     gameMomentum;
   useEffect(() => {
     setGameScore((prev) => {
+      if (gamePoints.p1GamePoints == 0 || gamePoints.p2GamePoints == 0) {
+        setTurn(() => initialTurns);
+        setGameInputs(() => initialGameInputs);
+        setP1SubmitBtnActive(false);
+        setP2SubmitBtnActive(false);
+        setGameMomentum((prev) => {
+          return {
+            ...prev,
+            isGameStarted: false,
+            isGamePaused: true,
+            isGameReset: true,
+            isGameResumed: true,
+            isGameEnd: true,
+          };
+        });
+      }
       return [
         ...prev,
         {
@@ -223,7 +244,7 @@ export default function Home() {
           />
           {/* <GameTimer /> */}
           <div className="row mt-3">
-            {isGameStarted && !isGamePaused && (
+            {isGameStarted && !isGamePaused && !isGameEnd && (
               <GamePlay
                 gameInputs={gameInputs}
                 setGameInputs={setGameInputs}
@@ -236,8 +257,15 @@ export default function Home() {
                 setP2SubmitBtnActive={setP2SubmitBtnActive}
               />
             )}
-            {isGameStarted && <GameScoreBoard gameScore={gameScore} />}
+            {isGameStarted && !isGameEnd && (
+              <GameScoreBoard gameScore={gameScore} />
+            )}
           </div>
+          {isGameEnd && (
+            <div className="row mt-3 d-flex justify-content-center">
+              <GameFinalResult gamePoints={gamePoints} />
+            </div>
+          )}
         </div>
       </div>
     </>
