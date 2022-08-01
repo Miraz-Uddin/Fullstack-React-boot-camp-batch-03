@@ -3,6 +3,7 @@ import React from "react";
 export default function GameScoreBoard({ gameScore }) {
   return (
     <div className="col-md-12 col-lg-7 mb-4 mx-auto">
+      <h3 className="text-center text-light mb-4">Score Board Tracker</h3>
       <table className="table text-white">
         <thead>
           <tr>
