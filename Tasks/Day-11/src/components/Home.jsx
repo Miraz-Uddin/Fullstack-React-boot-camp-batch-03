@@ -230,7 +230,14 @@ export default function Home() {
   return (
     <>
       <div className="bg">
-        <div className="container">
+        <div
+          className="container"
+          style={
+            !isGameEnd && isGameStarted
+              ? {}
+              : { transform: "translate(-50%, -50%)", top: "40%" }
+          }
+        >
           <div className="row">
             <div className="col-12">
               <h1 className="text-white text-center">Squid Game - gGanbu</h1>
