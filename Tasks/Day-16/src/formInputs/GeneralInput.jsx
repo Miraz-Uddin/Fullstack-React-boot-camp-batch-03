@@ -1,4 +1,5 @@
 import React from "react";
+import ShowErrors from "../components/showErrors";
 
 export default function GeneralInput({
   label,
@@ -6,16 +7,23 @@ export default function GeneralInput({
   name,
   value,
   func,
-  hasErrors,
   errorVal,
 }) {
+  let isInValid = false;
+  if (errorVal) {
+    if (errorVal.every((item) => item.type == "valid")) {
+      isInValid = false;
+    } else {
+      isInValid = true;
+    }
+  }
   return (
     <>
       <div className="form-floating mb-3">
         <input
           id="floatingInput"
           type={type}
-          className={`form-control ${errorVal && "is-invalid"}`}
+          className={`form-control ${isInValid && "is-invalid"}`}
           name={name}
           placeholder={name}
           value={value}
@@ -23,7 +31,7 @@ export default function GeneralInput({
         />
         <label htmlFor="floatingInput">{label}</label>
       </div>
-      {hasErrors && <div className="invalid-feedback">{errorVal}</div>}
+      <ShowErrors errors={errorVal} />
     </>
   );
 }

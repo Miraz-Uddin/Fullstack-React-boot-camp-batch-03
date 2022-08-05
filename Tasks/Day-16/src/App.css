@@ -53,3 +53,25 @@
     pointer-events: none;
     opacity: .65;
 }
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    padding-left: 5px;
+}
+
+li.valid {
+    list-style-type: '\2713';
+    color: #198754;
+}
+
+li.invalid {
+    list-style-type: '\2718';
+    color: #ff0015;
+}
+
+li::marker {
+    font-weight: bold;
+}

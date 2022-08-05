@@ -14,7 +14,6 @@ const userInitialnfoErrors = {
 export default function Home() {
   const [userInfo, setUserInfo] = useState(userInitialInfo);
   const [userInfoErrors, setUserInfoErrors] = useState(userInitialnfoErrors);
-  const [hasErrors, setHasErrors] = useState(false);
   const [formSubmitBtnActive, setFormSubmitBtnActive] = useState(false);
 
   const handleChange = (e) => {
@@ -27,7 +26,12 @@ export default function Home() {
         [key]: val,
       };
     });
-    errorUpdate(userInfoErrors, key, val, label);
+    if (key == "firstName") {
+      errorUpdate(setUserInfoErrors, "nameValidate", key, val, label);
+    }
+    if (key == "lastName") {
+      errorUpdate(setUserInfoErrors, "nameValidate", key, val, label);
+    }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,24 +43,16 @@ export default function Home() {
   const { firstNameError, lastNameError } = userInfoErrors;
 
   useEffect(() => {
-    const check = Object.values(userInfoErrors).every((item) => item != "");
-    if (!check) {
-      return setHasErrors(true);
-    } else {
-      return setHasErrors(false);
-    }
-  }, [hasErrors]);
-
-  useEffect(() => {
-    const checkErrors = Object.values(userInfoErrors).every(
-      (item) => item == ""
-    );
+    let checkErrorsArr = [];
+    Object.values(userInfoErrors).forEach((error) => {
+      checkErrorsArr.push(
+        Object.values(error).every((item) => item.type == "valid")
+      );
+    });
+    const checkErrors = checkErrorsArr.every((val) => val == true);
     const checkValues = Object.values(userInfo).every((item) => item != "");
-    if (checkErrors && checkValues) {
-      setFormSubmitBtnActive(true);
-    } else {
-      setFormSubmitBtnActive(false);
-    }
+    if (checkErrors && checkValues) return setFormSubmitBtnActive(true);
+    return setFormSubmitBtnActive(false);
   }, [userInfoErrors, userInfo]);
 
   return (
@@ -74,7 +70,6 @@ export default function Home() {
                       name="firstName"
                       value={firstName}
                       func={handleChange}
-                      hasErrors={hasErrors}
                       errorVal={firstNameError}
                     />
                   </div>
@@ -85,7 +80,6 @@ export default function Home() {
                       name="lastName"
                       value={lastName}
                       func={handleChange}
-                      hasErrors={hasErrors}
                       errorVal={lastNameError}
                     />
                   </div>
