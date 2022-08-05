@@ -15,6 +15,7 @@ export default function Home() {
   const [userInfo, setUserInfo] = useState(userInitialInfo);
   const [userInfoErrors, setUserInfoErrors] = useState(userInitialnfoErrors);
   const [hasErrors, setHasErrors] = useState(false);
+  const [formSubmitBtnActive, setFormSubmitBtnActive] = useState(false);
 
   const handleChange = (e) => {
     const label = e.target.nextElementSibling.innerHTML;
@@ -30,11 +31,8 @@ export default function Home() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const checkErrors = Object.values(userInfoErrors).every(
-      (item) => item == ""
-    );
-    const checkValues = Object.values(userInfo).every((item) => item != "");
-    if (checkErrors && checkValues) console.log("Data Submitted");
+    console.log("Data Can be Submitted");
+    console.log(userInfo);
   };
 
   const { firstName, lastName } = userInfo;
@@ -42,9 +40,24 @@ export default function Home() {
 
   useEffect(() => {
     const check = Object.values(userInfoErrors).every((item) => item != "");
-    if (!check) return setHasErrors(true);
-    return setHasErrors(false);
+    if (!check) {
+      return setHasErrors(true);
+    } else {
+      return setHasErrors(false);
+    }
   }, [hasErrors]);
+
+  useEffect(() => {
+    const checkErrors = Object.values(userInfoErrors).every(
+      (item) => item == ""
+    );
+    const checkValues = Object.values(userInfo).every((item) => item != "");
+    if (checkErrors && checkValues) {
+      setFormSubmitBtnActive(true);
+    } else {
+      setFormSubmitBtnActive(false);
+    }
+  }, [userInfoErrors, userInfo]);
 
   return (
     <>
@@ -77,7 +90,12 @@ export default function Home() {
                     />
                   </div>
                   <div className="col-12">
-                    <button type="submit" className="btn btn-success">
+                    <button
+                      type="submit"
+                      className={`btn btn-success ${
+                        !formSubmitBtnActive ? "disabled-button" : ""
+                      }`}
+                    >
                       Submit
                     </button>
                   </div>
