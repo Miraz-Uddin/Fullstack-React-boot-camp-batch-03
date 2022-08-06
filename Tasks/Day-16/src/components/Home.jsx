@@ -5,27 +5,31 @@ import errorUpdate from "../utils/errorUpdate";
 const userInitialInfo = {
   firstName: "",
   lastName: "",
+  username: "",
 };
 const userInitialnfoErrors = {
   firstNameError: "",
   lastNameError: "",
+  usernameError: "",
 };
 
 export default function Home() {
   const firstNameRef = useRef(null);
   const lastNameRef = useRef(null);
+  const usernameRef = useRef(null);
   const [userInfo, setUserInfo] = useState(userInitialInfo);
   const [userInfoErrors, setUserInfoErrors] = useState(userInitialnfoErrors);
   const [formSubmitBtnActive, setFormSubmitBtnActive] = useState(false);
   const [isErrorShow, setErrorShow] = useState(null);
 
   const handleChange = (e) => {
-    if (document.activeElement === firstNameRef.current) {
+    if (document.activeElement === firstNameRef.current)
       setErrorShow({ firstNameErrorShow: true });
-    }
-    if (document.activeElement === lastNameRef.current) {
+    if (document.activeElement === lastNameRef.current)
       setErrorShow({ lastNameErrorShow: true });
-    }
+    if (document.activeElement === usernameRef.current)
+      setErrorShow({ usernameErrorShow: true });
+
     const label = e.target.nextElementSibling.innerHTML;
     const key = e.target.name;
     const val = e.target.value;
@@ -35,12 +39,12 @@ export default function Home() {
         [key]: val,
       };
     });
-    if (key == "firstName") {
+    if (key == "firstName")
       errorUpdate(setUserInfoErrors, "nameValidate", key, val, label);
-    }
-    if (key == "lastName") {
+    if (key == "lastName")
       errorUpdate(setUserInfoErrors, "nameValidate", key, val, label);
-    }
+    if (key == "username")
+      errorUpdate(setUserInfoErrors, "usernameValidate", key, val, label);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,8 +52,8 @@ export default function Home() {
     console.log(userInfo);
   };
 
-  const { firstName, lastName } = userInfo;
-  const { firstNameError, lastNameError } = userInfoErrors;
+  const { firstName, lastName, username } = userInfo;
+  const { firstNameError, lastNameError, usernameError } = userInfoErrors;
 
   useEffect(() => {
     let checkErrorsArr = [];
@@ -94,6 +98,19 @@ export default function Home() {
                       value={lastName}
                       func={handleChange}
                       errorVal={lastNameError}
+                      isErrorShow={isErrorShow}
+                      setErrorShow={setErrorShow}
+                    />
+                  </div>
+                  <div className="col-md-6 col-lg-4">
+                    <GeneralInput
+                      label="Username"
+                      reference={usernameRef}
+                      type="text"
+                      name="username"
+                      value={username}
+                      func={handleChange}
+                      errorVal={usernameError}
                       isErrorShow={isErrorShow}
                       setErrorShow={setErrorShow}
                     />

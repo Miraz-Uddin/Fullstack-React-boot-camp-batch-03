@@ -90,6 +90,31 @@ li::marker {
     z-index: 5;
     padding: 10px 69px;
     transition: all linear .3s;
+    pointer-events: none;
+}
+
+@media (max-width: 1399.98px) {
+    .suggestions {
+        padding: 10px 0 10px 35px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .suggestions {
+        padding: 10px 0 10px 35px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .suggestions {
+        padding: 10px 0 10px 35px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .suggestions {
+        padding: 10px 69px;
+    }
 }
 
 .suggestions.display-errors {

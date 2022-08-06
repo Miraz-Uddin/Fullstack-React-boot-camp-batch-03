@@ -1,9 +1,13 @@
-export default function nameValidation(value, name, nameValidationConditions) {
-  console.log(value, name, nameValidationConditions);
+export default function usernameValidation(
+  value,
+  name,
+  usernameValidationConditions
+) {
+  console.log(value, name, usernameValidationConditions);
   const errors = [];
-  nameValidationConditions[0].type = value != "" ? "valid" : "invalid";
-  nameValidationConditions[1].type = /^[\S]+$/.test(value)
+  usernameValidationConditions[0].type = value != "" ? "valid" : "invalid";
+  usernameValidationConditions[1].type = /^[\S]+$/.test(value)
     ? "valid"
     : "invalid";
-  return nameValidationConditions;
+  return usernameValidationConditions;
 }
