@@ -1,3 +1,4 @@
+import contactValidation from "./contactValidation";
 import emailValidation from "./emailValidation";
 import nameValidation from "./nameValidation";
 import usernameValidation from "./userNameValidation";
@@ -24,6 +25,11 @@ export default function errorUpdate(
     { name: `${caseName} can not be Empty`, type: "invalid" },
     { name: "Space is Not Allowed", type: "invalid" },
     { name: "Must be a Valid E-mail", type: "invalid" },
+  ];
+  const contactValidationConditions = [
+    { name: `${caseName} can not be Empty`, type: "invalid" },
+    { name: "Space is Not Allowed", type: "invalid" },
+    { name: "Must Be a BD Phone Number", type: "invalid" },
   ];
 
   switch (caseType) {
@@ -57,6 +63,17 @@ export default function errorUpdate(
             value,
             caseName,
             emailValidationConditions
+          ),
+        };
+      });
+    case "contactValidate":
+      return errorUpdater((prev) => {
+        return {
+          ...prev,
+          [key + "Error"]: contactValidation(
+            value,
+            caseName,
+            contactValidationConditions
           ),
         };
       });

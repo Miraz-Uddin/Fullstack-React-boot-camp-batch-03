@@ -7,12 +7,14 @@ const userInitialInfo = {
   lastName: "",
   username: "",
   email: "",
+  contact: "",
 };
 const userInitialnfoErrors = {
   firstNameError: "",
   lastNameError: "",
   usernameError: "",
   emailError: "",
+  contactError: "",
 };
 
 export default function Home() {
@@ -20,6 +22,7 @@ export default function Home() {
   const lastNameRef = useRef(null);
   const usernameRef = useRef(null);
   const emailRef = useRef(null);
+  const contactRef = useRef(null);
   const [userInfo, setUserInfo] = useState(userInitialInfo);
   const [userInfoErrors, setUserInfoErrors] = useState(userInitialnfoErrors);
   const [formSubmitBtnActive, setFormSubmitBtnActive] = useState(false);
@@ -34,6 +37,8 @@ export default function Home() {
       setErrorShow({ usernameErrorShow: true });
     if (document.activeElement === emailRef.current)
       setErrorShow({ emailErrorShow: true });
+    if (document.activeElement === contactRef.current)
+      setErrorShow({ contactErrorShow: true });
 
     const label = e.target.nextElementSibling.innerHTML;
     const key = e.target.name;
@@ -52,6 +57,8 @@ export default function Home() {
       errorUpdate(setUserInfoErrors, "usernameValidate", key, val, label);
     if (key == "email")
       errorUpdate(setUserInfoErrors, "emailValidate", key, val, label);
+    if (key == "contact")
+      errorUpdate(setUserInfoErrors, "contactValidate", key, val, label);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -59,9 +66,14 @@ export default function Home() {
     console.log(userInfo);
   };
 
-  const { firstName, lastName, username, email } = userInfo;
-  const { firstNameError, lastNameError, usernameError, emailError } =
-    userInfoErrors;
+  const { firstName, lastName, username, email, contact } = userInfo;
+  const {
+    firstNameError,
+    lastNameError,
+    usernameError,
+    emailError,
+    contactError,
+  } = userInfoErrors;
 
   useEffect(() => {
     let checkErrorsArr = [];
@@ -132,6 +144,19 @@ export default function Home() {
                       value={email}
                       func={handleChange}
                       errorVal={emailError}
+                      isErrorShow={isErrorShow}
+                      setErrorShow={setErrorShow}
+                    />
+                  </div>
+                  <div className="col-md-6 col-lg-4">
+                    <GeneralInput
+                      label="Contact Number"
+                      reference={contactRef}
+                      type="text"
+                      name="contact"
+                      value={contact}
+                      func={handleChange}
+                      errorVal={contactError}
                       isErrorShow={isErrorShow}
                       setErrorShow={setErrorShow}
                     />
