@@ -1,3 +1,4 @@
+import emailValidation from "./emailValidation";
 import nameValidation from "./nameValidation";
 import usernameValidation from "./userNameValidation";
 export default function errorUpdate(
@@ -18,6 +19,11 @@ export default function errorUpdate(
     { name: `${caseName} can not be Empty`, type: "invalid" },
     { name: "Space is Not Allowed", type: "invalid" },
     { name: "Length Must be Greater than 6", type: "invalid" },
+  ];
+  const emailValidationConditions = [
+    { name: `${caseName} can not be Empty`, type: "invalid" },
+    { name: "Space is Not Allowed", type: "invalid" },
+    { name: "Must be a Valid E-mail", type: "invalid" },
   ];
 
   switch (caseType) {
@@ -40,6 +46,17 @@ export default function errorUpdate(
             value,
             caseName,
             usernameValidationConditions
+          ),
+        };
+      });
+    case "emailValidate":
+      return errorUpdater((prev) => {
+        return {
+          ...prev,
+          [key + "Error"]: emailValidation(
+            value,
+            caseName,
+            emailValidationConditions
           ),
         };
       });
