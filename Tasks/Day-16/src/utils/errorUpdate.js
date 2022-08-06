@@ -1,6 +1,7 @@
 import contactValidation from "./contactValidation";
 import emailValidation from "./emailValidation";
 import nameValidation from "./nameValidation";
+import passwordValidation from "./passwordValidation";
 import usernameValidation from "./userNameValidation";
 export default function errorUpdate(
   errorUpdater,
@@ -30,6 +31,13 @@ export default function errorUpdate(
     { name: `${caseName} can not be Empty`, type: "invalid" },
     { name: "Space is Not Allowed", type: "invalid" },
     { name: "Must Be a BD Phone Number", type: "invalid" },
+  ];
+  const passwordValidationConditions = [
+    { name: `${caseName} can not be Empty`, type: "invalid" },
+    { name: "Need At Least 1 Uppercase Letter", type: "invalid" },
+    { name: "Need At Least 1 Lowercase Letter", type: "invalid" },
+    { name: "Need At Least 1 Digit", type: "invalid" },
+    { name: "Need At Least 1 Symbol (non-word character)", type: "invalid" },
   ];
 
   switch (caseType) {
@@ -74,6 +82,17 @@ export default function errorUpdate(
             value,
             caseName,
             contactValidationConditions
+          ),
+        };
+      });
+    case "passwordValidate":
+      return errorUpdater((prev) => {
+        return {
+          ...prev,
+          [key + "Error"]: passwordValidation(
+            value,
+            caseName,
+            passwordValidationConditions
           ),
         };
       });

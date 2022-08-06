@@ -95,19 +95,19 @@ li::marker {
 
 @media (max-width: 1399.98px) {
     .suggestions {
-        padding: 10px 0 10px 35px;
+        padding: 10px 10px 10px 35px;
     }
 }
 
 @media (max-width: 1199.98px) {
     .suggestions {
-        padding: 10px 0 10px 35px;
+        padding: 10px 10px 10px 35px;
     }
 }
 
 @media (max-width: 991.98px) {
     .suggestions {
-        padding: 10px 0 10px 35px;
+        padding: 10px 10px 10px 35px;
     }
 }
 
