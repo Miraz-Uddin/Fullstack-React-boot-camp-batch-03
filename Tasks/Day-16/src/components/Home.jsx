@@ -114,7 +114,9 @@ export default function Home() {
             <div className="card shadow">
               <div className="card-body">
                 <div className="p-5 text-center">
-                  <h2>Form Validations</h2>
+                  <h2 style={{ fontFamily: "'Lobster', cursive" }}>
+                    Controlled Form Validations
+                  </h2>
                 </div>
                 <form className="row g-3" onSubmit={handleSubmit}>
                   <div className="col-md-6 col-lg-4">
