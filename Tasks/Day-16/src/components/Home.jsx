@@ -9,6 +9,7 @@ const userInitialInfo = {
   email: "",
   contact: "",
   password: "",
+  portfolio: "",
 };
 const userInitialnfoErrors = {
   firstNameError: "",
@@ -17,6 +18,7 @@ const userInitialnfoErrors = {
   emailError: "",
   contactError: "",
   passwordError: "",
+  portfolioError: "",
 };
 
 export default function Home() {
@@ -26,6 +28,7 @@ export default function Home() {
   const emailRef = useRef(null);
   const contactRef = useRef(null);
   const passwordRef = useRef(null);
+  const portfolioRef = useRef(null);
   const [userInfo, setUserInfo] = useState(userInitialInfo);
   const [userInfoErrors, setUserInfoErrors] = useState(userInitialnfoErrors);
   const [formSubmitBtnActive, setFormSubmitBtnActive] = useState(false);
@@ -44,6 +47,8 @@ export default function Home() {
       setErrorShow({ contactErrorShow: true });
     if (document.activeElement === passwordRef.current)
       setErrorShow({ passwordErrorShow: true });
+    if (document.activeElement === portfolioRef.current)
+      setErrorShow({ portfolioErrorShow: true });
 
     const label = e.target.nextElementSibling.innerHTML;
     const key = e.target.name;
@@ -66,14 +71,18 @@ export default function Home() {
       errorUpdate(setUserInfoErrors, "contactValidate", key, val, label);
     if (key == "password")
       errorUpdate(setUserInfoErrors, "passwordValidate", key, val, label);
+    if (key == "portfolio")
+      errorUpdate(setUserInfoErrors, "portfolioValidate", key, val, label);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(e);
     console.log("Data Can be Submitted");
     console.log(userInfo);
   };
 
-  const { firstName, lastName, username, email, contact, password } = userInfo;
+  const { firstName, lastName, username, email, contact, password, portfolio } =
+    userInfo;
   const {
     firstNameError,
     lastNameError,
@@ -81,6 +90,7 @@ export default function Home() {
     emailError,
     contactError,
     passwordError,
+    portfolioError,
   } = userInfoErrors;
 
   useEffect(() => {
@@ -178,6 +188,19 @@ export default function Home() {
                       value={password}
                       func={handleChange}
                       errorVal={passwordError}
+                      isErrorShow={isErrorShow}
+                      setErrorShow={setErrorShow}
+                    />
+                  </div>
+                  <div className="col-md-12 col-lg-8">
+                    <GeneralInput
+                      label="Portfolio"
+                      reference={portfolioRef}
+                      type="text"
+                      name="portfolio"
+                      value={portfolio}
+                      func={handleChange}
+                      errorVal={portfolioError}
                       isErrorShow={isErrorShow}
                       setErrorShow={setErrorShow}
                     />

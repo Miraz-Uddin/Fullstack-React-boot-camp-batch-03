@@ -2,6 +2,7 @@ import contactValidation from "./contactValidation";
 import emailValidation from "./emailValidation";
 import nameValidation from "./nameValidation";
 import passwordValidation from "./passwordValidation";
+import portfolioValidation from "./portfolioValidation";
 import usernameValidation from "./userNameValidation";
 export default function errorUpdate(
   errorUpdater,
@@ -38,6 +39,10 @@ export default function errorUpdate(
     { name: "Need At Least 1 Lowercase Letter", type: "invalid" },
     { name: "Need At Least 1 Digit", type: "invalid" },
     { name: "Need At Least 1 Symbol (non-word character)", type: "invalid" },
+  ];
+  const portfolioValidationConditions = [
+    { name: `${caseName} can not be Empty`, type: "invalid" },
+    { name: "Must be a Valid URL", type: "invalid" },
   ];
 
   switch (caseType) {
@@ -93,6 +98,17 @@ export default function errorUpdate(
             value,
             caseName,
             passwordValidationConditions
+          ),
+        };
+      });
+    case "portfolioValidate":
+      return errorUpdater((prev) => {
+        return {
+          ...prev,
+          [key + "Error"]: portfolioValidation(
+            value,
+            caseName,
+            portfolioValidationConditions
           ),
         };
       });
