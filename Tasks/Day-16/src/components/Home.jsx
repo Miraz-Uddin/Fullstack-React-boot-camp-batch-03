@@ -113,6 +113,9 @@ export default function Home() {
           <div className="col-12">
             <div className="card shadow">
               <div className="card-body">
+                <div className="p-5 text-center">
+                  <h2>Form Validations</h2>
+                </div>
                 <form className="row g-3" onSubmit={handleSubmit}>
                   <div className="col-md-6 col-lg-4">
                     <GeneralInput
@@ -192,7 +195,7 @@ export default function Home() {
                       setErrorShow={setErrorShow}
                     />
                   </div>
-                  <div className="col-md-12 col-lg-8">
+                  <div className="col-12">
                     <GeneralInput
                       label="Portfolio"
                       reference={portfolioRef}
@@ -205,10 +208,10 @@ export default function Home() {
                       setErrorShow={setErrorShow}
                     />
                   </div>
-                  <div className="col-12">
+                  <div className="col-12 d-flex justify-content-center">
                     <button
                       type="submit"
-                      className={`btn btn-success ${
+                      className={`btn btn-success btn-lg ${
                         !formSubmitBtnActive ? "disabled-button" : ""
                       }`}
                     >

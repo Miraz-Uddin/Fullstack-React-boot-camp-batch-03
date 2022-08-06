@@ -5,7 +5,7 @@ export default function nameValidation(value, name, nameValidationConditions) {
   nameValidationConditions[1].type = /^(?!.*[0-9]).*/.test(value)
     ? "valid"
     : "invalid";
-  nameValidationConditions[2].type = /^[a-zA-Z\s]{1,}$/.test(value)
+  nameValidationConditions[2].type = /^[a-zA-Z\s\.]{1,}$/.test(value)
     ? "valid"
     : "invalid";
   nameValidationConditions[3].type = value.length > 3 ? "valid" : "invalid";
