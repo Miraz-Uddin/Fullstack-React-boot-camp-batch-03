@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import GeneralInput from "../formInputs/GeneralInput";
 import errorUpdate from "../utils/errorUpdate";
 
@@ -12,11 +12,20 @@ const userInitialnfoErrors = {
 };
 
 export default function Home() {
+  const firstNameRef = useRef(null);
+  const lastNameRef = useRef(null);
   const [userInfo, setUserInfo] = useState(userInitialInfo);
   const [userInfoErrors, setUserInfoErrors] = useState(userInitialnfoErrors);
   const [formSubmitBtnActive, setFormSubmitBtnActive] = useState(false);
+  const [isErrorShow, setErrorShow] = useState(null);
 
   const handleChange = (e) => {
+    if (document.activeElement === firstNameRef.current) {
+      setErrorShow({ firstNameErrorShow: true });
+    }
+    if (document.activeElement === lastNameRef.current) {
+      setErrorShow({ lastNameErrorShow: true });
+    }
     const label = e.target.nextElementSibling.innerHTML;
     const key = e.target.name;
     const val = e.target.value;
@@ -66,21 +75,27 @@ export default function Home() {
                   <div className="col-md-6 col-lg-4">
                     <GeneralInput
                       label="First Name"
+                      reference={firstNameRef}
                       type="text"
                       name="firstName"
                       value={firstName}
                       func={handleChange}
                       errorVal={firstNameError}
+                      isErrorShow={isErrorShow}
+                      setErrorShow={setErrorShow}
                     />
                   </div>
                   <div className="col-md-6 col-lg-4">
                     <GeneralInput
                       label="Last Name"
+                      reference={lastNameRef}
                       type="text"
                       name="lastName"
                       value={lastName}
                       func={handleChange}
                       errorVal={lastNameError}
+                      isErrorShow={isErrorShow}
+                      setErrorShow={setErrorShow}
                     />
                   </div>
                   <div className="col-12">

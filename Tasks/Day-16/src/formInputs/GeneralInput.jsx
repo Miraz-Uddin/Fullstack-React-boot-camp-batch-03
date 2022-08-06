@@ -3,11 +3,14 @@ import ShowErrors from "../components/showErrors";
 
 export default function GeneralInput({
   label,
+  reference,
   type,
   name,
   value,
   func,
   errorVal,
+  isErrorShow,
+  setErrorShow,
 }) {
   let isInValid = false;
   if (errorVal) {
@@ -18,7 +21,7 @@ export default function GeneralInput({
     }
   }
   return (
-    <>
+    <div className="input-holder">
       <div className="form-floating mb-3">
         <input
           id="floatingInput"
@@ -28,10 +31,18 @@ export default function GeneralInput({
           placeholder={name}
           value={value}
           onChange={func}
+          ref={reference}
+          onBlur={() => {
+            setErrorShow(null);
+          }}
         />
         <label htmlFor="floatingInput">{label}</label>
       </div>
-      <ShowErrors errors={errorVal} />
-    </>
+      <ShowErrors
+        errors={errorVal}
+        refId={name + "Error"}
+        isErrorShow={isErrorShow}
+      />
+    </div>
   );
 }

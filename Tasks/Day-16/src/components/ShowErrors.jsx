@@ -1,9 +1,15 @@
 import React from "react";
 
-export default function ShowErrors({ errors }) {
+export default function ShowErrors({ errors, refId, isErrorShow }) {
   return (
     <>
-      <ul style={{ height: "125px" }}>
+      <ul
+        style={{ height: "125px" }}
+        id={refId}
+        className={`suggestions ${
+          isErrorShow && isErrorShow[refId + "Show"] ? "display-errors" : ""
+        }`}
+      >
         {errors &&
           errors.map((item, index) => {
             return (
