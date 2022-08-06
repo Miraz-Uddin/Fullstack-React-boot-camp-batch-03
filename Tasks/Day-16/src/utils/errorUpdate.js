@@ -17,6 +17,7 @@ export default function errorUpdate(
   const usernameValidationConditions = [
     { name: `${caseName} can not be Empty`, type: "invalid" },
     { name: "Space is Not Allowed", type: "invalid" },
+    { name: "Length Must be Greater than 6", type: "invalid" },
   ];
 
   switch (caseType) {

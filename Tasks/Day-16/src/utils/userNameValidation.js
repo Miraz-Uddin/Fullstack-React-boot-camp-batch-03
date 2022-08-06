@@ -9,5 +9,6 @@ export default function usernameValidation(
   usernameValidationConditions[1].type = /^[\S]+$/.test(value)
     ? "valid"
     : "invalid";
+  usernameValidationConditions[2].type = value.length > 5 ? "valid" : "invalid";
   return usernameValidationConditions;
 }
