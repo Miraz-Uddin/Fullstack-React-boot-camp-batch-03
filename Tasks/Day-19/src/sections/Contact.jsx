@@ -13,32 +13,38 @@ export default function Contact() {
               <div className="footer-head">
                 <img src="assets/images/header/logo.png" alt="logo" />
               </div>
-              <div className="footer-address">
-                <div className="footer-address-section">
-                  <div className="footer-address-section-left">
-                    <i className="fa fa-map-marker"></i>
+              <Row>
+                <Col sm={12} md={6} lg={4}>
+                  <div className="footer-address-section">
+                    <div className="footer-address-section-left">
+                      <i className="fa fa-map-marker"></i>
+                    </div>
+                    <div className="footer-address-section-right">
+                      <p>1234, Park Street Avenue California, America.</p>
+                    </div>
                   </div>
-                  <div className="footer-address-section-right">
-                    <p>1234, Park Street Avenue California, America.</p>
+                </Col>
+                <Col sm={12} md={6} lg={4}>
+                  <div className="footer-address-section">
+                    <div className="footer-address-section-left">
+                      <i className="fa fa-envelope-o"></i>
+                    </div>
+                    <div className="footer-address-section-right">
+                      <p>instacam@product.com product@instacam.com</p>
+                    </div>
                   </div>
-                </div>
-                <div className="footer-address-section">
-                  <div className="footer-address-section-left">
-                    <i className="fa fa-envelope-o"></i>
+                </Col>
+                <Col sm={12} md={6} lg={4}>
+                  <div className="footer-address-section">
+                    <div className="footer-address-section-left">
+                      <i className="fa fa-globe"></i>
+                    </div>
+                    <div className="footer-address-section-right">
+                      <p>www.instacam-product.com www.landing-instacam.com</p>
+                    </div>
                   </div>
-                  <div className="footer-address-section-right">
-                    <p>instacam@product.com product@instacam.com</p>
-                  </div>
-                </div>
-                <div className="footer-address-section mr">
-                  <div className="footer-address-section-left">
-                    <i className="fa fa-globe"></i>
-                  </div>
-                  <div className="footer-address-section-right">
-                    <p>www.instacam-product.com www.landing-instacam.com</p>
-                  </div>
-                </div>
-              </div>
+                </Col>
+              </Row>
               <div className="footer-social">
                 <h2>follow us</h2>
                 <p>

@@ -13,7 +13,9 @@ export default function Banner() {
               <h1>
                 Really Great <span>DSLR Camera,</span> We’re Made
               </h1>
-              <a href="#">explore more</a>
+              <p className="explore-btn-wrapper">
+                <a href="#">explore more</a>
+              </p>
               <div className="banner-content-image">
                 <img
                   src="assets/images/banner/banner_image.png"

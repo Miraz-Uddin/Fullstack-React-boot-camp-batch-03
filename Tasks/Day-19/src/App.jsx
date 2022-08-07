@@ -2,13 +2,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import "./App.css";
 import Home from "./components/Home";
-import Nav from "./components/Nav";
+import Navigator from "./components/Navigator";
 
 function App() {
   const [count, setCount] = useState(0);
   return (
     <>
-      <Nav />
+      <Navigator />
       <Home />
     </>
   );
