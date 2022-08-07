@@ -287,12 +287,12 @@ header {
 }
 
 .features_items_left {
-	width: 370px;
+	/* width: 370px; */
 	float: left;
 }
 
 .features_items_right {
-	width: 370px;
+	/* width: 370px; */
 	float: right;
 }
 
@@ -687,7 +687,6 @@ header {
 }
 
 .faq_form input {
-	width: 310px;
 	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
@@ -1104,10 +1103,11 @@ header {
 	top: 1%;
 }
 
+/* 
 .services-content-right-details {
 	width: 270px;
 	float: right;
-}
+} */
 
 .services-content-right-details h2 {
 	color: #3a85c9;

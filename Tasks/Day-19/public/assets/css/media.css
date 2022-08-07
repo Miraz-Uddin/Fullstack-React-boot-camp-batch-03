@@ -92,5 +92,42 @@
         .services-content-right-image {
             display: none;
         }
+
+        .aboutIt-details p {
+            padding-right: 0;
+        }
+
+        .services-content-right-details table {
+            margin: 0 auto;
+        }
+
+        .services-content-right-details table tbody {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .services-content-right-details table tbody tr {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .services-content-right-details h2 {
+            text-align: center;
+        }
+
+        .services-content-right-details a {
+            margin-right: 0;
+        }
+
+        .services-content-right {
+            height: auto;
+        }
+
+        .services-content-left-item {
+            width: 450px;
+            float: none;
+        }
+
     }
 }
