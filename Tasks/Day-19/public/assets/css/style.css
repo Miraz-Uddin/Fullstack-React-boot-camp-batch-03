@@ -1,7 +1,4 @@
 /*
-	Project:	PSD TO HTML
-	Team:		B
-	Position:	Team Leader
  	Author: 	Md. Miraz Uddin
  	Email:	    freelancer.miraz.uddin@gmail.com
 
@@ -29,7 +26,8 @@
 	outline: 0;
 }
 
-ul, ol {
+ul,
+ol {
 	list-style-type: none;
 }
 
@@ -41,14 +39,14 @@ img {
 	vertical-align: middle;
 }
 
-.full-wrapper {
+/* .full-wrapper {
 	width: 100%;
 }
 
 .wrapper {
 	width: 1170px;
 	margin: 0 auto;
-}
+} */
 
 .section_heading {
 	text-align: center;
@@ -89,7 +87,7 @@ img {
 
 .backToTop i {
 	color: #fff;
-	background-image: radial-gradient( #3a85c9, #a6d4ff);
+	background-image: radial-gradient(#3a85c9, #a6d4ff);
 	font-size: 23px;
 	height: 50px;
 	width: 50px;
@@ -208,6 +206,7 @@ header {
 	from {
 		top: -40px;
 	}
+
 	to {
 		top: 0;
 	}
@@ -223,7 +222,7 @@ header {
 
 .banner-section {
 	padding-top: 140px;
-	background-image: radial-gradient( #e8f4ff, #d3e9fe);
+	background-image: radial-gradient(#e8f4ff, #d3e9fe);
 	padding-bottom: 106px;
 }
 
@@ -572,7 +571,7 @@ header {
 ==============================================*/
 
 .about-section {
-	background-image: radial-gradient( #e8f4ff, #d3e9fe);
+	background-image: radial-gradient(#e8f4ff, #d3e9fe);
 	padding-top: 50px;
 	padding-bottom: 70px;
 }
@@ -674,7 +673,7 @@ header {
 .faq_contents_right {
 	width: 310px;
 	float: right;
-	background-image: radial-gradient( #e8f4ff, #d3e9fe);
+	background-image: radial-gradient(#e8f4ff, #d3e9fe);
 	padding: 36px 30px 28px;
 }
 
@@ -1000,7 +999,7 @@ header {
 	float: left;
 	width: 270px;
 	height: 270px;
-	background-image: radial-gradient( #e8f4ff, #d3e9fe);
+	background-image: radial-gradient(#e8f4ff, #d3e9fe);
 	position: relative;
 }
 
@@ -1136,7 +1135,7 @@ header {
 	height: 570px;
 	float: left;
 	margin-right: 30px;
-	background-image: radial-gradient( #e8f4ff, #d3e9fe);
+	background-image: radial-gradient(#e8f4ff, #d3e9fe);
 	position: relative;
 }
 
@@ -1228,7 +1227,7 @@ header {
 }
 
 .testimonial-section-slide-head {
-	background-image: radial-gradient( #e8f4ff, #d3e9fe);
+	background-image: radial-gradient(#e8f4ff, #d3e9fe);
 	position: relative;
 }
 
@@ -1346,7 +1345,8 @@ header {
 	position: relative;
 }
 
-.blogBackgroundImageLeft, .blogBackgroundImageRight {
+.blogBackgroundImageLeft,
+.blogBackgroundImageRight {
 	position: absolute;
 }
 
@@ -1611,7 +1611,7 @@ header {
 }
 
 .footer-content {
-	background-image: radial-gradient( #e8f4ff, #d3e9fe);
+	background-image: radial-gradient(#e8f4ff, #d3e9fe);
 }
 
 /*==============================================
