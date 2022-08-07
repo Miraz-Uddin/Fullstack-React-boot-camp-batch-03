@@ -3,7 +3,7 @@ import React from "react";
 export default function WatchVideo() {
   return (
     <section className="watchVideo">
-      <div className="full-wrapper watchVideo_content">
+      <div className="watchVideo_content">
         <div className="watchVideo_content_left">
           <div className="watchVideo_content_left_details">
             <h2>Vintage Rangefinder Camera</h2>
