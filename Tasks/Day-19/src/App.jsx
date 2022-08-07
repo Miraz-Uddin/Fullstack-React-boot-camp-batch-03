@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import Banner from "./components/Banner";
 import Home from "./components/Home";
 import Nav from "./components/Nav";
 
@@ -10,7 +9,6 @@ function App() {
     <>
       <Nav />
       <Home />
-      <Banner />
     </>
   );
 }
