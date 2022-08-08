@@ -1192,11 +1192,20 @@ header {
 
 .testimonial-section-slide {
 	box-sizing: border-box;
-	width: 370px;
+	/* width: 370px;
 	float: left;
-	margin-right: 30px;
+	margin-right: 30px; */
 	background: #fff;
 	border: 1px solid #d4eafe;
+}
+
+
+.testimonial-section .slick-list {
+	margin: 0 -5px;
+}
+
+.testimonial-section .slick-slide>div {
+	padding: 0 5px;
 }
 
 .testimonial-section-slide-head {
@@ -1278,24 +1287,40 @@ header {
 	margin-top: 3px;
 }
 
-.testimonial-navigation i {
+
+
+.testimonial-section .slick-prev,
+.testimonial-section .slick-next {
+	top: 110%;
+	z-index: 55;
+	transform: translateX(-50%);
+}
+
+.testimonial-section .slick-prev {
+	left: 48%;
+}
+
+.testimonial-section .slick-next {
+	left: 52%;
+}
+
+.testimonial-section .slick-prev:before,
+.testimonial-section .slick-next:before {
+	font-size: 40px;
 	height: 40px;
 	width: 40px;
 	line-height: 40px;
 	text-align: center;
-	border: 1px solid #3a85c9;
 	border-radius: 50%;
 	color: #3a85c9;
 	background: #fff;
 	cursor: pointer;
-	margin-right: 6px;
 }
 
-.testimonial-navigation i:hover {
-	border: 1px solid #3a85c9;
+.testimonial-section .slick-prev:hover::before,
+.testimonial-section .slick-next:hover::before {
 	border-radius: 50%;
-	color: #fff;
-	background: #3a85c9;
+	color: #3a85c9;
 }
 
 .testimonial-navigation p {
