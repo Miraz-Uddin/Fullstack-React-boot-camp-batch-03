@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 
 export default function About() {
   return (
-    <section id="aboutIt">
+    <section id="aboutIt" name="aboutIt">
       <div className="about-section">
         <Container>
           <Row>

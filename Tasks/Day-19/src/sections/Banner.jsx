@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 
 export default function Banner() {
   return (
-    <section id="banner">
+    <section id="banner" name="banner">
       <div className="banner-section">
         <Container>
           <Row>

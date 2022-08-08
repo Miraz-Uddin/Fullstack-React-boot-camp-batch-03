@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 
 export default function Contact() {
   return (
-    <section id="contact">
+    <section id="contact" name="contact">
       <div className="footer-content">
         <Container>
           <Row>

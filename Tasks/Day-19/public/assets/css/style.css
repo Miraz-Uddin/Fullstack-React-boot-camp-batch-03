@@ -89,8 +89,22 @@ img {
 /*==============================================
 	header Start
 ==============================================*/
+.header-section {
+	padding: 0 !important;
+}
+
 .header-section .navbar-brand {
 	margin-right: 0 !important;
+}
+
+.header-section .navbar-toggler {
+	border: transparent;
+}
+
+.header-section .navbar-toggler:focus {
+	border: transparent;
+	outline: 0;
+	box-shadow: none;
 }
 
 .header-section .btn-check:active+.btn,
@@ -125,18 +139,18 @@ img {
 .main-menu>a::after {
 	content: '';
 	position: absolute;
-	left: 0;
+	left: 50%;
 	top: 0;
 	height: 3px;
-	width: 100%;
+	width: 60%;
 	background: #3a85c9;
-	transform: scaleX(0);
+	transform: scaleX(0) translateX(-50%);
 	transform-origin: right;
 	transition: transform .3s ease-in;
 }
 
 .main-menu>a:hover::after {
-	transform: scaleX(1);
+	transform: scaleX(1) translateX(-50%);
 	transform-origin: left;
 }
 

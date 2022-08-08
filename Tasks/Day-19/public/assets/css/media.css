@@ -10,6 +10,10 @@
     @media (min-width: 480px) {}
 
     @media (min-width: 320px) {
+        .header-section {
+            padding: 15px 0 !important;
+        }
+
         .banner-section {
             padding-top: 85px;
             padding-bottom: 0px;
@@ -46,7 +50,7 @@
         }
 
         .main-menu {
-            background: #fff;
+            background: #fafafa;
             padding-left: 120px !important;
             padding-right: 120px !important;
         }
