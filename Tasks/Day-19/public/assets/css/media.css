@@ -68,6 +68,20 @@
             display: none !important;
         }
 
+        .feature-section {
+            padding-top: 60px;
+            padding-bottom: 30px;
+        }
+
+        .faq {
+            padding-top: 70px;
+            padding-bottom: 75px;
+        }
+
+        .services {
+            padding-top: 80px;
+        }
+
         .l1::after,
         .l1::before,
         .l2::after,
@@ -89,8 +103,65 @@
             font-size: 14px;
         }
 
-        .blog-section-slide-left {
+        .watchVideo_content_left {
+            float: none;
+            width: 100%;
+        }
+
+        .watchVideo_content_right {
+            float: none;
+            width: 100%;
+        }
+
+        .watchVideo_content_left_image {
             display: none;
+        }
+
+        .watchVideo_content_left_details {
+            width: 100%;
+            float: none;
+        }
+
+        .watchVideo_content_left {
+            padding-bottom: 30px;
+            height: auto;
+        }
+
+        .watchVideo_content_button {
+            top: 70%;
+            left: 37%;
+        }
+
+        .blog-section-slide-left {
+            width: 130px;
+        }
+
+        .blogPost>p {
+            display: none;
+        }
+
+        .blog_author {
+            display: none;
+        }
+
+        .blog-section-slide-right {
+            padding-top: 5px;
+        }
+
+        .blogPost>a {
+            padding: 8px 20px;
+        }
+
+        .prev_post_left {
+            padding: 12px 0 5px 0;
+        }
+
+        .blogPost {
+            padding-bottom: 36px;
+        }
+
+        .blog-section {
+            padding-top: 15px;
         }
 
         .services-content-right-image {
@@ -131,6 +202,26 @@
         .services-content-left-item {
             width: 450px;
             float: none;
+        }
+
+        .testimonial-section {
+            padding-top: 15px;
+        }
+
+        .testimonial-section .slick-prev {
+            left: 47%;
+        }
+
+        .testimonial-section .slick-next {
+            left: 55%;
+        }
+
+        .blog-section .slick-prev {
+            left: 46%;
+        }
+
+        .blog-section .slick-next {
+            left: 54%;
         }
 
     }

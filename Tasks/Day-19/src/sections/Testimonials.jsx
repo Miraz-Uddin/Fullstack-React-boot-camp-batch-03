@@ -22,8 +22,6 @@ export default function Testimonials() {
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: true,
-    // nextArrow: ".testimonial-navigation-right",
-    // prevArrow: ".testimonial-navigation-left",
     nextArrow: <TestimonialNextArrow />,
     prevArrow: <TestimonialPrevArrow />,
     responsive: [

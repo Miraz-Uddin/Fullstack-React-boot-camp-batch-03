@@ -1,7 +1,7 @@
 import React from "react";
 import About from "../sections/About";
 import Banner from "../sections/Banner";
-import Blog from "../sections/Blog";
+import Blogs from "../sections/Blogs";
 import Contact from "../sections/Contact";
 import Faq from "../sections/Faq";
 import Features from "../sections/Features";
@@ -19,7 +19,7 @@ export default function Home() {
       <WatchVideo />
       <Services />
       <Testimonials />
-      <Blog />
+      <Blogs />
       <Contact />
     </>
   );
