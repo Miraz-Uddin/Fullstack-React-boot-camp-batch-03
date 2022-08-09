@@ -1,0 +1,70 @@
+.bg {
+  background-image: radial-gradient(#e8f4ff, #d3e9fe);
+  padding: clamp(2rem, 5vw, 5rem) 0;
+  position: relative;
+}
+
+.h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: #3a85c9;
+  font-size: clamp(2.5rem, 3.5vw, 5rem);
+  line-height: clamp(3rem, 5vw, 6.5rem);
+  padding: clamp(2rem, 5vw, 6rem) 0;
+}
+
+@media (max-width: 991.98px) {
+  .h1 {
+    text-align: center;
+    padding: clamp(7rem, 7vw, 7rem) 0 clamp(3rem, 3vw, 3rem);
+  }
+}
+
+.span {
+  font-family: "Abril Fatface", cursive;
+}
+
+.p {
+  text-align: left;
+}
+
+@media (max-width: 991.98px) {
+  .p {
+    text-align: center;
+  }
+}
+
+.a {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #3a85c9;
+  font-size: 20px;
+  text-transform: capitalize;
+  background: #fff;
+  border-radius: 50px;
+  transition: all linear 0.3s;
+  box-shadow: 0px 15px 25px 0px rgba(58, 132, 201, 0.25);
+  padding: clamp(0.3rem, 0.6vw, 0.8rem) clamp(0.5rem, 0.6vw, 0.9rem);
+}
+
+.a:hover {
+  color: #fff;
+  background-color: #3a85c9;
+  box-shadow: 0px 15px 25px 0px rgba(255, 255, 255, 0.5);
+}
+
+.img {
+  position: absolute;
+  bottom: clamp(-9rem, -10vw, -11rem);
+  right: clamp(4rem, 5vw, 12rem);
+  width: clamp(32rem, 40vw, 47rem);
+  img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .img {
+    display: none;
+  }
+}

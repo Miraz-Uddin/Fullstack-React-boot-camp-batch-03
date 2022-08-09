@@ -220,67 +220,6 @@ header {
 ==============================================*/
 
 /*==============================================
-	banner Start
-==============================================*/
-
-.banner-section {
-	padding-top: 140px;
-	background-image: radial-gradient(#e8f4ff, #d3e9fe);
-	padding-bottom: 106px;
-}
-
-.banner-content h1 {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 300;
-	color: #3a85c9;
-	font-size: 70px;
-	line-height: 92px;
-	padding-right: 680px;
-	padding-bottom: 56px;
-}
-
-.banner-content span {
-	font-family: 'Abril Fatface', cursive;
-}
-
-.explore-btn-wrapper {
-	text-align: left;
-}
-
-.banner-content a {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
-	color: #3a85c9;
-	font-size: 20px;
-	text-transform: capitalize;
-	background: #fff;
-	border-radius: 50px;
-	padding: 15px 20px;
-	transition: all linear .3s;
-	box-shadow: 0px 15px 25px 0px rgba(58, 132, 201, 0.25);
-}
-
-.banner-content a:hover {
-	color: #fff;
-	background-color: #3a85c9;
-	box-shadow: 0px 15px 25px 0px rgba(255, 255, 255, 0.5);
-}
-
-.banner-content {
-	position: relative;
-}
-
-.banner-content-image {
-	position: absolute;
-	bottom: -282px;
-	right: -134px;
-}
-
-/*==============================================
-	banner End
-==============================================*/
-
-/*==============================================
 	features Start
 ==============================================*/
 
@@ -1385,7 +1324,7 @@ header {
 }
 
 .blog-section-slide-left {
-	width: 270px;
+	width: 16em;
 	float: left;
 	position: relative;
 }
@@ -1544,7 +1483,7 @@ header {
 	position: absolute;
 	content: '';
 	background: #3a85c9;
-	width: 201px;
+	width: 85%;
 	height: 1px;
 	top: 0;
 	left: 15px;
