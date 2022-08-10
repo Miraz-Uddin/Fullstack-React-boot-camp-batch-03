@@ -1,0 +1,73 @@
+$primary-font: "Open Sans", sans-serif;
+$secondary-font: "Abril Fatface", cursive;
+
+@mixin typography(
+  $size,
+  $color,
+  $line-height: 40px,
+  $weight: 400,
+  $font-family: $primary-font
+) {
+  font-size: $size;
+  color: $color;
+  line-height: $line-height;
+  font-weight: $weight;
+  font-family: $font-family;
+}
+
+.bg {
+  background-image: radial-gradient(#e8f4ff, #d3e9fe);
+  padding: clamp(2rem, 5vw, 5rem) 0 clamp(2rem, 8vw, 6rem);
+}
+
+.details {
+  position: relative;
+  .image {
+    pointer-events: none;
+    position: absolute;
+    top: clamp(-6.7rem, -6.8vw, -5.8rem);
+    left: clamp(-30rem, -30vw, -30rem);
+  }
+  @media (max-width: 1199.98px) {
+    .image {
+      top: clamp(-6.5rem, -7.8vw, -4.3rem);
+      left: clamp(-30rem, -30vw, -28rem);
+    }
+  }
+  @media (max-width: 991.98px) {
+    .image {
+      left: clamp(-25rem, -25vw, -17rem);
+    }
+  }
+  @media (max-width: 767.98px) {
+    .image {
+      display: none;
+    }
+  }
+  .h2 {
+    @include typography(32px, #3a85c9, 40px, 400, $secondary-font);
+    padding-bottom: 24px;
+    text-transform: capitalize;
+  }
+  .p {
+    @include typography(14px, #444, 24px);
+    padding: 0 clamp(0rem, 4vw, 4rem) 0 0;
+    &.para {
+      margin-bottom: 2.5rem;
+    }
+  }
+  .a {
+    @include typography(20px, #3a85c9, 24px, 600);
+    padding: clamp(0.5rem, 0.5vw, 0.5rem) clamp(1rem, 1vw, 1rem);
+    text-transform: capitalize;
+    background: #fff;
+    border-radius: 50px;
+    transition: all linear 0.3s;
+    box-shadow: 0px 15px 25px 0px rgba(58, 132, 201, 0.25);
+    &:hover {
+      color: #fff;
+      background-color: #3a85c9;
+      box-shadow: 0px 15px 25px 0px rgba(255, 255, 255, 0.5);
+    }
+  }
+}

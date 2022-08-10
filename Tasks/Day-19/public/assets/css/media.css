@@ -14,21 +14,6 @@
         line-height: 50px !important;
     }
 
-    /* About Start */
-    .aboutIt-details {
-        width: auto;
-    }
-
-    .aboutIt-details p {
-        padding-right: 0;
-    }
-
-    .aboutIt-image {
-        display: none;
-    }
-
-    /* About End */
-
     /* Faq Start */
     .faq {
         padding-top: 70px;
@@ -206,21 +191,6 @@
         font-size: 16px !important;
         line-height: 50px !important;
     }
-
-    /* About Start */
-    .aboutIt-details {
-        width: auto;
-    }
-
-    .aboutIt-details p {
-        padding-right: 0;
-    }
-
-    .aboutIt-image {
-        display: none;
-    }
-
-    /* About End */
 
     /* Faq Start */
     .faq {

@@ -1,5 +1,5 @@
 import React from "react";
-// import About from "../sections/About";
+import About from "../sections/About/About";
 import Banner from "../sections/Banner/Banner";
 // import Blogs from "../sections/Blogs";
 // import Contact from "../sections/Contact";
@@ -14,8 +14,8 @@ export default function Home() {
     <>
       <Banner />
       <Features />
-      {/* <About />
-      <Faq />
+      <About />
+      {/* <Faq />
       <WatchVideo />
       <Services />
       <Testimonials />
