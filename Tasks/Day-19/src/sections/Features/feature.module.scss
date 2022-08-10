@@ -1,0 +1,252 @@
+$font-stack: "Open Sans", sans-serif;
+@mixin psudo($background, $width, $height, $opacity: 1) {
+  position: absolute;
+  content: "";
+  background: $background;
+  width: $width;
+  height: $height;
+  opacity: $opacity;
+  transition: all linear 0.3s;
+}
+
+@mixin typography($size, $color, $weight: 400) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  font-family: $font-stack;
+}
+
+@mixin circle-special($length, $position, $opacity, $center: false) {
+  width: $length;
+  height: $length;
+  position: $position;
+  border: 1px solid rgba(58, 132, 201, $opacity);
+  @if $center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.extra {
+  padding: clamp(2rem, 5vw, 5rem) 0;
+}
+
+.feature {
+  position: relative;
+}
+
+.img {
+  img {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -3;
+  }
+}
+@media (max-width: 991.98px) {
+  .img {
+    display: none;
+  }
+}
+
+.item {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1rem) clamp(1rem, 1vw, 1rem);
+  margin-bottom: 30px;
+  transition: all linear 0.3s;
+  cursor: pointer;
+  &:hover {
+    background: #fafafa;
+    box-shadow: 0px 0px 4.75px 0.25px rgba(0, 0, 0, 0.15);
+    .p1,
+    .p2,
+    .p3,
+    .p4 {
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+    span {
+      color: #3a85c9;
+    }
+  }
+  span {
+    @include typography(60px, #444);
+    &.defect {
+      display: inline-block;
+      transform: rotate(90deg);
+    }
+  }
+  h2 {
+    @include typography(20px, #222, 600);
+  }
+  p {
+    line-height: 24px;
+    @include typography(14px, #444);
+  }
+  .circle {
+    background: transparent;
+    border-radius: 50%;
+    &.c1 {
+      z-index: -1;
+      @include circle-special(28px, absolute, 0.2, $center: false);
+    }
+    &.c2 {
+      @include circle-special(24px, relative, 0.3, $center: true);
+    }
+    &.c3 {
+      cursor: pointer;
+      @include circle-special(20px, absolute, 0.4, $center: true);
+    }
+  }
+  @media (max-width: 991.98px) {
+    .circle {
+      display: none;
+    }
+  }
+}
+
+.i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px;
+  color: #3a85c9;
+}
+
+.p1 {
+  top: clamp(9rem, 8vw, 13rem);
+  right: clamp(-20rem, -25vw, -13rem);
+  transform: scale(1.2);
+  &::before {
+    z-index: 3;
+    top: -31px;
+    right: 12px;
+    @include psudo(#e8f4ff, 1px, 30px, 0);
+  }
+  &::after {
+    top: clamp(-2rem, -5vw, -5rem);
+    right: clamp(0.75rem, 0.75vw, 4rem);
+    z-index: 3;
+    @include psudo(#e8f4ff, clamp(16rem, 15vw, 44rem), 1px, 0);
+  }
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.p2 {
+  top: clamp(0rem, 0vw, 0rem);
+  right: clamp(-15rem, -15vw, 15rem);
+  transform: scale(1.2);
+  &::before {
+    z-index: 3;
+    top: 25px;
+    right: 12px;
+    @include psudo(#e8f4ff, 1px, 56px, 0);
+  }
+  &::after {
+    top: clamp(5rem, 5vw, 0rem);
+    right: clamp(0.75rem, 0.75vw, 4rem);
+    z-index: 3;
+    @include psudo(#e8f4ff, clamp(5rem, 18vw, 12rem), 1px, 0);
+  }
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.p3 {
+  top: clamp(12rem, 12vw, 12rem);
+  right: clamp(32rem, 32vw, 32rem);
+  transform: scale(1.2);
+  &::before {
+    z-index: 3;
+    top: -57px;
+    right: 12px;
+    @include psudo(#e8f4ff, 1px, 56px, 0);
+  }
+  &::after {
+    top: clamp(-5rem, -3vw, -3.6rem);
+    right: clamp(-10.7rem, -14vw, -10rem);
+    z-index: 3;
+    @include psudo(#e8f4ff, clamp(11.5rem, -3vw, -3rem), 1px, 0);
+  }
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.p4 {
+  top: clamp(0rem, 2vw, 2rem);
+  right: clamp(35rem, -35vw, 35rem);
+  transform: scale(1.2);
+  &::before {
+    z-index: 3;
+    bottom: -57px;
+    right: 12px;
+    @include psudo(#e8f4ff, 1px, 56px, 0);
+  }
+  &::after {
+    bottom: clamp(-5rem, -3vw, -3.6rem);
+    right: clamp(-13.2rem, -15vw, -10rem);
+    z-index: 3;
+    @include psudo(#e8f4ff, clamp(14rem, 15vw, -15rem), 1px, 0);
+  }
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 1399.98px) {
+  .p1 {
+    top: clamp(10rem, 9vw, 8rem);
+  }
+  .p3 {
+    right: clamp(27rem, 31vw, 29rem);
+  }
+  .p4 {
+    top: clamp(-3rem, 3vw, 3rem);
+    right: clamp(29.5rem, -30vw, 30rem);
+    &::after {
+      right: clamp(-16rem, -12.9vw, -11.3rem);
+      width: clamp(12.05rem, 13vw, -15rem);
+    }
+  }
+}
+@media (max-width: 1199.98px) {
+  .p1 {
+    top: clamp(13rem, 9vw, 8rem);
+  }
+  .p3 {
+    right: clamp(21rem, 21vw, 20rem);
+    top: clamp(16rem, 16vw, 16rem);
+    &::after {
+      right: clamp(-10.1rem, -10vw, -7.7rem);
+      width: clamp(8.5rem, -10vw, -6rem);
+    }
+  }
+  .p4 {
+    top: clamp(3rem, 3vw, 3rem);
+    right: clamp(24rem, -30vw, 30rem);
+    &::after {
+      right: clamp(-18.6rem, -14.5vw, -12.2rem);
+      width: clamp(13rem, 15vw, -15rem);
+    }
+  }
+}
