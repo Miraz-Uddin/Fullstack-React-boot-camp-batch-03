@@ -90,7 +90,6 @@ $font-stack: "Open Sans", sans-serif;
     background: transparent;
     border-radius: 50%;
     &.c1 {
-      z-index: -1;
       @include circle-special(28px, absolute, 0.2, $center: false);
     }
     &.c2 {

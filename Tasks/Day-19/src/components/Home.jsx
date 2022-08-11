@@ -3,7 +3,7 @@ import About from "../sections/About/About";
 import Banner from "../sections/Banner/Banner";
 // import Blogs from "../sections/Blogs";
 // import Contact from "../sections/Contact";
-// import Faq from "../sections/Faq";
+import Faq from "../sections/Faq/Faq";
 import Features from "../sections/Features/Features";
 // import Services from "../sections/Services";
 // import Testimonials from "../sections/Testimonials";
@@ -15,8 +15,8 @@ export default function Home() {
       <Banner />
       <Features />
       <About />
-      {/* <Faq />
-      <WatchVideo />
+      <Faq />
+      {/* <WatchVideo />
       <Services />
       <Testimonials />
       <Blogs />
