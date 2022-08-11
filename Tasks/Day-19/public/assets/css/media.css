@@ -1,3 +1,21 @@
+@media (max-width: 991.98px) {
+
+    /* Testimonial Start */
+    .testimonial-section {
+        padding-top: 15px;
+    }
+
+    .testimonial-section .slick-prev {
+        left: 47%;
+    }
+
+    .testimonial-section .slick-next {
+        left: 53%;
+    }
+
+    /* Testimonial End */
+}
+
 @media (max-width: 767.98px) {
     .header-section {
         padding: 15px 0 !important;
@@ -258,11 +276,11 @@
     }
 
     .testimonial-section .slick-prev {
-        left: 47%;
+        left: 46%;
     }
 
     .testimonial-section .slick-next {
-        left: 55%;
+        left: 54%;
     }
 
     /* Testimonial End */
