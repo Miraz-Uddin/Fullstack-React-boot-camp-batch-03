@@ -61,6 +61,11 @@ $secondary-font: "Abril Fatface", cursive;
     padding-bottom: 5px;
     text-align: center;
     @include typography(32px, #3a85c9, 40px, 400, $secondary-font);
+    @media (max-width: 1199.98px) {
+      & {
+        @include typography(25px, #3a85c9, 30px, 400, $secondary-font);
+      }
+    }
   }
   .p {
     text-transform: capitalize;

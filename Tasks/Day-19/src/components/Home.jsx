@@ -5,9 +5,9 @@ import Banner from "../sections/Banner/Banner";
 // import Contact from "../sections/Contact";
 import Faq from "../sections/Faq/Faq";
 import Features from "../sections/Features/Features";
-// import Services from "../sections/Services";
+import Services from "../sections/Services/Services";
 // import Testimonials from "../sections/Testimonials";
-// import WatchVideo from "../sections/WatchVideo";
+import WatchVideo from "../sections/WatchVideo";
 
 export default function Home() {
   return (
@@ -16,8 +16,9 @@ export default function Home() {
       <Features />
       <About />
       <Faq />
-      {/* <WatchVideo />
+      <WatchVideo />
       <Services />
+      {/* 
       <Testimonials />
       <Blogs />
       <Contact /> */}
