@@ -1,4 +1,5 @@
 import React from "react";
+// import styles from "./blogs.module.scss";
 
 export default function Blog({
   item,

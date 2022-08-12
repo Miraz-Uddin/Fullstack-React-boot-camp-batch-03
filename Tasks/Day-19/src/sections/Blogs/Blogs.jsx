@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Slider from "react-slick";
-import Blog from "../components/Blog";
+import Blog from "./Blog";
+import styles from "./blogs.module.scss";
 
 function BlogNextArrow(props) {
   const { className, style, onClick } = props;
@@ -103,7 +102,7 @@ export default function Blogs() {
     prevArrow: <BlogPrevArrow />,
     responsive: [
       {
-        breakpoint: 991,
+        breakpoint: 576,
         settings: {
           slidesToShow: 1,
         },
@@ -111,48 +110,44 @@ export default function Blogs() {
     ],
   };
   return (
-    <section className="blog">
-      <div className="blog-full">
-        <div className="blogBackgroundImageLeft">
+    <section>
+      <div className={styles.blogFull}>
+        <div className={styles.blogBackgroundImageLeft}>
           <img
             src="assets/images/blog/bg-left.png"
             alt="blog background image left"
           />
         </div>
-        <Container>
-          <Row>
-            <Col>
-              <div className="blog-heading section_heading">
-                <h2>Latest News</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div className="blog-section">
-                <Slider {...settings}>
-                  {blogList &&
-                    blogList.map((item, index) => (
-                      <Blog
-                        key={item.id}
-                        item={item}
-                        prevSlideTitle={prevSlideTitle}
-                        nextSlideTitle={nextSlideTitle}
-                        activeSlide={activeSlide}
-                        index={index}
-                      />
-                    ))}
-                </Slider>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-        <div className="blogBackgroundImageRight">
+        <div className={styles.blogBackgroundImageRight}>
           <img
             src="assets/images/blog/bg-right.png"
             alt="blog background image right"
           />
         </div>
+        <Container>
+          <div className="section_heading">
+            <h2>Latest News</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div>
+            <Slider {...settings}>
+              {blogList &&
+                blogList.map((item, index) => (
+                  <Blog
+                    key={item.id}
+                    item={item}
+                    prevSlideTitle={prevSlideTitle}
+                    nextSlideTitle={nextSlideTitle}
+                    activeSlide={activeSlide}
+                    index={index}
+                  />
+                ))}
+            </Slider>
+          </div>
+        </Container>
       </div>
     </section>
   );

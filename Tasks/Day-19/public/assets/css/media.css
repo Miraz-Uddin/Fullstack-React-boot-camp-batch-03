@@ -118,71 +118,9 @@
     }
 
     /* Testimonial End */
-
-    /* Blog Start */
-
-    .blog-section {
-        padding-top: 15px;
-    }
-
-    .blog-section .slick-prev {
-        left: 46%;
-    }
-
-    .blog-section .slick-next {
-        left: 54%;
-    }
-
-    /* .blog-section-slide-left {
-        width: 200px;
-    } */
-
-    .blog-section-slide-right {
-        padding-top: 5px;
-    }
-
-    .blogPost {
-        padding-bottom: 7px;
-    }
-
-    .blogPost>h2 {
-        padding-bottom: 10px;
-    }
-
-    .blogPost>a {
-        padding: 5px 20px;
-    }
-
-    .blogPost>p {
-        font-size: 13px;
-        line-height: 20px;
-        padding-bottom: 0px;
-    }
-
-    .prev_post {
-        margin-top: 14px;
-    }
-
-    .prev_post_left {
-        padding: 5px 0;
-    }
-
-    .prev_post_left>p {
-        margin-bottom: 0;
-    }
-
-    .prev_post_right>p {
-        margin-bottom: 0;
-        line-height: 18px;
-        padding-top: 12px;
-        font-size: 18px;
-    }
-
-    /* Blog End */
 }
 
 @media (max-width: 575.98px) {
-
     .header-section {
         padding: 15px 0 !important;
     }
@@ -284,65 +222,4 @@
     }
 
     /* Testimonial End */
-
-    /* Blog Start */
-    .blog_author {
-        display: none;
-    }
-
-    .blog-section {
-        padding-top: 15px;
-    }
-
-    .blog-section .slick-prev {
-        left: 46%;
-    }
-
-    .blog-section .slick-next {
-        left: 54%;
-    }
-
-    /* .blog-section-slide-left {
-        width: 130px;
-    } */
-
-    .blog-section-slide-right {
-        padding-top: 5px;
-    }
-
-    .blogPost {
-        padding-bottom: 36px;
-    }
-
-    .blogPost>h2 {
-        padding-bottom: 22px;
-    }
-
-    .blogPost>a {
-        padding: 8px 20px;
-    }
-
-    .blogPost>p {
-        display: none;
-    }
-
-    .prev_post_left {
-        padding: 12px 0 5px 0;
-    }
-
-    /* Blog End */
-
-    @media (max-width: 420.98px) {
-        /* .blog-section-slide-left {
-            width: 90px;
-        } */
-
-        .blog-section-slide-right {
-            width: 245px;
-        }
-
-        .prev_post_right {
-            width: 170px;
-        }
-    }
 }
