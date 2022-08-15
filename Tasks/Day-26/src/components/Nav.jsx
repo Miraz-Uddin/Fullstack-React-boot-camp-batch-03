@@ -65,7 +65,7 @@ export default function Nav() {
                 <Link to="pricing">Pricing</Link>
               </li>
               <li>
-                <a href="blog.html">Blog</a>
+                <Link to="blogs">Blogs</Link>
               </li>
               <li>
                 <a href="contact.html">Contact</a>

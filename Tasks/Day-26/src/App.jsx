@@ -4,6 +4,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import About from "./pages/About";
+import Blogs from "./pages/Blogs";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
@@ -36,6 +37,7 @@ function App() {
         <Route path="services" element={<Services />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="pricing" element={<Pricing />} />
+        <Route path="blogs" element={<Blogs />} />
       </Routes>
       <Footer />
     </BrowserRouter>
