@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Nav() {
   return (
@@ -16,21 +16,21 @@ export default function Nav() {
 
           <nav className="nav-menu d-none d-lg-block">
             <ul>
-              <li className="active">
-                <Link to="/">Home</Link>
+              <li>
+                <NavLink to="/">Home</NavLink>
               </li>
 
               <li className="drop-down">
-                <Link to="about">About</Link>
+                <NavLink to="about">About</NavLink>
                 <ul>
                   <li>
-                    <Link to="about">About Us</Link>
+                    <NavLink to="about">About Us</NavLink>
                   </li>
                   <li>
-                    <Link to="team">Team</Link>
+                    <NavLink to="team">Team</NavLink>
                   </li>
                   <li>
-                    <Link to="testimonials">Testimonials</Link>
+                    <NavLink to="testimonials">Testimonials</NavLink>
                   </li>
                   {/* If You want a deeper level drop down, uncomment below */}
                   {/* <li className="drop-down">
@@ -56,19 +56,19 @@ export default function Nav() {
                 </ul>
               </li>
               <li>
-                <Link to="services">Services</Link>
+                <NavLink to="services">Services</NavLink>
               </li>
               <li>
-                <Link to="portfolio">Portfolio</Link>
+                <NavLink to="portfolio">Portfolio</NavLink>
               </li>
               <li>
-                <Link to="pricing">Pricing</Link>
+                <NavLink to="pricing">Pricing</NavLink>
               </li>
               <li>
-                <Link to="blogs">Blogs</Link>
+                <NavLink to="blogs">Blogs</NavLink>
               </li>
               <li>
-                <Link to="contact">Contact</Link>
+                <NavLink to="contact">Contact</NavLink>
               </li>
             </ul>
           </nav>

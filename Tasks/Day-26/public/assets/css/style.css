@@ -140,6 +140,10 @@ h6 {
   color: #1bbd36;
 }
 
+.nav-menu a.active {
+  color: #1bbd36;
+}
+
 .nav-menu .drop-down ul {
   display: block;
   position: absolute;
