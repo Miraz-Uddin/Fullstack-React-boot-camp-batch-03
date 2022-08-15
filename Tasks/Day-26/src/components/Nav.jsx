@@ -59,7 +59,7 @@ export default function Nav() {
                 <Link to="services">Services</Link>
               </li>
               <li>
-                <a href="portfolio.html">Portfolio</a>
+                <Link to="portfolio">Portfolio</Link>
               </li>
               <li>
                 <a href="pricing.html">Pricing</a>
