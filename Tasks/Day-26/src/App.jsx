@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
-import Nav from "./components/Nav";
+// import Nav from "./components/Nav";
+import Home from "./pages/Home";
 
 function App() {
   // Funky Promotional
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Nav />
+      {/* <Nav /> */}
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
