@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import About from "./pages/About";
 import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
@@ -38,6 +39,7 @@ function App() {
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="blogs" element={<Blogs />} />
+        <Route path="contact" element={<Contact />} />
       </Routes>
       <Footer />
     </BrowserRouter>

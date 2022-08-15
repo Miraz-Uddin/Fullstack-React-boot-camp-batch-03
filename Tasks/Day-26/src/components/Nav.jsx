@@ -68,7 +68,7 @@ export default function Nav() {
                 <Link to="blogs">Blogs</Link>
               </li>
               <li>
-                <a href="contact.html">Contact</a>
+                <Link to="contact">Contact</Link>
               </li>
             </ul>
           </nav>
