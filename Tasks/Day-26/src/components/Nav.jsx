@@ -30,9 +30,10 @@ export default function Nav() {
                     <Link to="team">Team</Link>
                   </li>
                   <li>
-                    <a href="testimonials.html">Testimonials</a>
+                    <Link to="testimonials">Testimonials</Link>
                   </li>
-                  <li className="drop-down">
+                  {/* If You want a deeper level drop down, uncomment below */}
+                  {/* <li className="drop-down">
                     <a href="#">Deep Drop Down</a>
                     <ul>
                       <li>
@@ -51,7 +52,7 @@ export default function Nav() {
                         <a href="#">Deep Drop Down 5</a>
                       </li>
                     </ul>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
 

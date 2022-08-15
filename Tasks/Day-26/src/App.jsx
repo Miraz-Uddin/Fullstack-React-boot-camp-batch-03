@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Team from "./pages/Team";
+import Testimonials from "./pages/Testimonials";
 
 function App() {
   // Funky Promotional
@@ -28,6 +29,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="team" element={<Team />} />
+        <Route path="testimonials" element={<Testimonials />} />
       </Routes>
       <Footer />
     </BrowserRouter>
