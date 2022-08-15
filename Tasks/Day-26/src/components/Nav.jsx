@@ -55,9 +55,8 @@ export default function Nav() {
                   </li> */}
                 </ul>
               </li>
-
               <li>
-                <a href="services.html">Services</a>
+                <Link to="services">Services</Link>
               </li>
               <li>
                 <a href="portfolio.html">Portfolio</a>

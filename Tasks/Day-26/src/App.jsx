@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Nav from "./components/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import Services from "./pages/Services";
 import Team from "./pages/Team";
 import Testimonials from "./pages/Testimonials";
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="team" element={<Team />} />
         <Route path="testimonials" element={<Testimonials />} />
+        <Route path="services" element={<Services />} />
       </Routes>
       <Footer />
     </BrowserRouter>
