@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
+import Pricing from "./pages/Pricing";
 import Services from "./pages/Services";
 import Team from "./pages/Team";
 import Testimonials from "./pages/Testimonials";
@@ -34,6 +35,7 @@ function App() {
         <Route path="testimonials" element={<Testimonials />} />
         <Route path="services" element={<Services />} />
         <Route path="portfolio" element={<Portfolio />} />
+        <Route path="pricing" element={<Pricing />} />
       </Routes>
       <Footer />
     </BrowserRouter>

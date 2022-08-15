@@ -62,7 +62,7 @@ export default function Nav() {
                 <Link to="portfolio">Portfolio</Link>
               </li>
               <li>
-                <a href="pricing.html">Pricing</a>
+                <Link to="pricing">Pricing</Link>
               </li>
               <li>
                 <a href="blog.html">Blog</a>
