@@ -978,6 +978,10 @@ section {
   background: rgba(255, 255, 255, 0.85);
 }
 
+.team .member .social.action {
+  top: 0;
+}
+
 .team .member .social a {
   transition: color 0.3s;
   color: #111;
