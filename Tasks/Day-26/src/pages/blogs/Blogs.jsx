@@ -107,7 +107,12 @@ export default function Blogs({ articles }) {
                 <h3 className="sidebar-title">Recent Posts</h3>
                 <div className="sidebar-item recent-posts">
                   <div className="post-item clearfix">
-                    <img src="../assets/img/blog-recent-posts-1.jpg" alt="" />
+                    <img
+                      src={`${
+                        import.meta.env.VITE_PUBLIC_URL
+                      }/assets/img/blog-recent-posts-1.jpg`}
+                      alt=""
+                    />
                     <h4>
                       <a href="blog-single.html">
                         Nihil blanditiis at in nihil autem
@@ -117,7 +122,12 @@ export default function Blogs({ articles }) {
                   </div>
 
                   <div className="post-item clearfix">
-                    <img src="../assets/img/blog-recent-posts-2.jpg" alt="" />
+                    <img
+                      src={`${
+                        import.meta.env.VITE_PUBLIC_URL
+                      }/assets/img/blog-recent-posts-2.jpg`}
+                      alt=""
+                    />
                     <h4>
                       <a href="blog-single.html">Quidem autem et impedit</a>
                     </h4>
@@ -125,7 +135,12 @@ export default function Blogs({ articles }) {
                   </div>
 
                   <div className="post-item clearfix">
-                    <img src="../assets/img/blog-recent-posts-3.jpg" alt="" />
+                    <img
+                      src={`${
+                        import.meta.env.VITE_PUBLIC_URL
+                      }/assets/img/blog-recent-posts-3.jpg`}
+                      alt=""
+                    />
                     <h4>
                       <a href="blog-single.html">
                         Id quia et et ut maxime similique occaecati ut
@@ -135,7 +150,12 @@ export default function Blogs({ articles }) {
                   </div>
 
                   <div className="post-item clearfix">
-                    <img src="../assets/img/blog-recent-posts-4.jpg" alt="" />
+                    <img
+                      src={`${
+                        import.meta.env.VITE_PUBLIC_URL
+                      }/assets/img/blog-recent-posts-4.jpg`}
+                      alt=""
+                    />
                     <h4>
                       <a href="blog-single.html">
                         Laborum corporis quo dara net para
@@ -145,7 +165,12 @@ export default function Blogs({ articles }) {
                   </div>
 
                   <div className="post-item clearfix">
-                    <img src="../assets/img/blog-recent-posts-5.jpg" alt="" />
+                    <img
+                      src={`${
+                        import.meta.env.VITE_PUBLIC_URL
+                      }/assets/img/blog-recent-posts-5.jpg`}
+                      alt=""
+                    />
                     <h4>
                       <a href="blog-single.html">
                         Et dolores corrupti quae illo quod dolor

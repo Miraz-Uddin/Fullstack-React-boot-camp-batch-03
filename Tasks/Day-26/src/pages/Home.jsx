@@ -14,7 +14,11 @@ export default function Home() {
             {/* <!-- Slide 1 --> */}
             <div
               className="carousel-item active"
-              style={{ backgroundImage: "url(assets/img/slide/slide-1.jpg)" }}
+              style={{
+                backgroundImage: `url(${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/slide/slide-1.jpg)`,
+              }}
             >
               <div className="carousel-container">
                 <div className="carousel-content animate__animated animate__fadeInUp">
@@ -40,7 +44,11 @@ export default function Home() {
             {/* <!-- Slide 2 --> */}
             <div
               className="carousel-item"
-              style={{ backgroundImage: "url(assets/img/slide/slide-2.jpg)" }}
+              style={{
+                backgroundImage: `url(${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/slide/slide-2.jpg)`,
+              }}
             >
               <div className="carousel-container">
                 <div className="carousel-content animate__animated animate__fadeInUp">
@@ -64,7 +72,11 @@ export default function Home() {
             {/* <!-- Slide 3 --> */}
             <div
               className="carousel-item"
-              style={{ backgroundImage: "url(assets/img/slide/slide-3.jpg)" }}
+              style={{
+                backgroundImage: `url(${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/slide/slide-3.jpg)`,
+              }}
             >
               <div className="carousel-container">
                 <div className="carousel-content animate__animated animate__fadeInUp">
