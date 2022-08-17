@@ -83,7 +83,7 @@ export default function About() {
               <div className="member" data-aos="fade-up">
                 <div className="member-img">
                   <img
-                    src="assets/img/team/team-1.jpg"
+                    src="./assets/img/team/team-1.jpg"
                     className="img-fluid"
                     alt=""
                   />
@@ -113,7 +113,7 @@ export default function About() {
               <div className="member" data-aos="fade-up" data-aos-delay="100">
                 <div className="member-img">
                   <img
-                    src="assets/img/team/team-2.jpg"
+                    src="./assets/img/team/team-2.jpg"
                     className="img-fluid"
                     alt=""
                   />
@@ -143,7 +143,7 @@ export default function About() {
               <div className="member" data-aos="fade-up" data-aos-delay="200">
                 <div className="member-img">
                   <img
-                    src="assets/img/team/team-3.jpg"
+                    src="./assets/img/team/team-3.jpg"
                     className="img-fluid"
                     alt=""
                   />
@@ -173,7 +173,7 @@ export default function About() {
               <div className="member" data-aos="fade-up" data-aos-delay="300">
                 <div className="member-img">
                   <img
-                    src="assets/img/team/team-4.jpg"
+                    src="./assets/img/team/team-4.jpg"
                     className="img-fluid"
                     alt=""
                   />
@@ -331,7 +331,7 @@ export default function About() {
             <div className="col-lg-3 col-md-4 col-6">
               <div className="client-logo">
                 <img
-                  src="assets/img/clients/client-1.png"
+                  src="./assets/img/clients/client-1.png"
                   className="img-fluid"
                   alt=""
                 />
@@ -341,7 +341,7 @@ export default function About() {
             <div className="col-lg-3 col-md-4 col-6">
               <div className="client-logo">
                 <img
-                  src="assets/img/clients/client-2.png"
+                  src="./assets/img/clients/client-2.png"
                   className="img-fluid"
                   alt=""
                 />
@@ -351,7 +351,7 @@ export default function About() {
             <div className="col-lg-3 col-md-4 col-6">
               <div className="client-logo">
                 <img
-                  src="assets/img/clients/client-3.png"
+                  src="./assets/img/clients/client-3.png"
                   className="img-fluid"
                   alt=""
                 />
@@ -361,7 +361,7 @@ export default function About() {
             <div className="col-lg-3 col-md-4 col-6">
               <div className="client-logo">
                 <img
-                  src="assets/img/clients/client-4.png"
+                  src="./assets/img/clients/client-4.png"
                   className="img-fluid"
                   alt=""
                 />
@@ -371,7 +371,7 @@ export default function About() {
             <div className="col-lg-3 col-md-4 col-6">
               <div className="client-logo">
                 <img
-                  src="assets/img/clients/client-5.png"
+                  src="./assets/img/clients/client-5.png"
                   className="img-fluid"
                   alt=""
                 />
@@ -381,7 +381,7 @@ export default function About() {
             <div className="col-lg-3 col-md-4 col-6">
               <div className="client-logo">
                 <img
-                  src="assets/img/clients/client-6.png"
+                  src="./assets/img/clients/client-6.png"
                   className="img-fluid"
                   alt=""
                 />
@@ -391,7 +391,7 @@ export default function About() {
             <div className="col-lg-3 col-md-4 col-6">
               <div className="client-logo">
                 <img
-                  src="assets/img/clients/client-7.png"
+                  src="./assets/img/clients/client-7.png"
                   className="img-fluid"
                   alt=""
                 />
@@ -401,7 +401,7 @@ export default function About() {
             <div className="col-lg-3 col-md-4 col-6">
               <div className="client-logo">
                 <img
-                  src="assets/img/clients/client-8.png"
+                  src="./assets/img/clients/client-8.png"
                   className="img-fluid"
                   alt=""
                 />

@@ -38,7 +38,7 @@ export default function Portfolio() {
           <div className="row portfolio-container" data-aos="fade-up">
             <div className="col-lg-4 col-md-6 portfolio-item filter-app">
               <img
-                src="assets/img/portfolio/portfolio-1.jpg"
+                src="./assets/img/portfolio/portfolio-1.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -46,7 +46,7 @@ export default function Portfolio() {
                 <h4>App 1</h4>
                 <p>App</p>
                 <a
-                  href="assets/img/portfolio/portfolio-1.jpg"
+                  href="./assets/img/portfolio/portfolio-1.jpg"
                   data-gall="portfolioGallery"
                   className="venobox preview-link"
                   title="App 1"
@@ -65,7 +65,7 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-web">
               <img
-                src="assets/img/portfolio/portfolio-2.jpg"
+                src="./assets/img/portfolio/portfolio-2.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -73,7 +73,7 @@ export default function Portfolio() {
                 <h4>Web 3</h4>
                 <p>Web</p>
                 <a
-                  href="assets/img/portfolio/portfolio-2.jpg"
+                  href="./assets/img/portfolio/portfolio-2.jpg"
                   data-gall="portfolioGallery"
                   className="venobox preview-link"
                   title="Web 3"
@@ -92,7 +92,7 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-app">
               <img
-                src="assets/img/portfolio/portfolio-3.jpg"
+                src="./assets/img/portfolio/portfolio-3.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -100,7 +100,7 @@ export default function Portfolio() {
                 <h4>App 2</h4>
                 <p>App</p>
                 <a
-                  href="assets/img/portfolio/portfolio-3.jpg"
+                  href="./assets/img/portfolio/portfolio-3.jpg"
                   data-gall="portfolioGallery"
                   className="venobox preview-link"
                   title="App 2"
@@ -119,7 +119,7 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-card">
               <img
-                src="assets/img/portfolio/portfolio-4.jpg"
+                src="./assets/img/portfolio/portfolio-4.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -127,7 +127,7 @@ export default function Portfolio() {
                 <h4>Card 2</h4>
                 <p>Card</p>
                 <a
-                  href="assets/img/portfolio/portfolio-4.jpg"
+                  href="./assets/img/portfolio/portfolio-4.jpg"
                   data-gall="portfolioGallery"
                   className="venobox preview-link"
                   title="Card 2"
@@ -146,7 +146,7 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-web">
               <img
-                src="assets/img/portfolio/portfolio-5.jpg"
+                src="./assets/img/portfolio/portfolio-5.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -154,7 +154,7 @@ export default function Portfolio() {
                 <h4>Web 2</h4>
                 <p>Web</p>
                 <a
-                  href="assets/img/portfolio/portfolio-5.jpg"
+                  href="./assets/img/portfolio/portfolio-5.jpg"
                   data-gall="portfolioGallery"
                   className="venobox preview-link"
                   title="Web 2"
@@ -173,7 +173,7 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-app">
               <img
-                src="assets/img/portfolio/portfolio-6.jpg"
+                src="./assets/img/portfolio/portfolio-6.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -181,7 +181,7 @@ export default function Portfolio() {
                 <h4>App 3</h4>
                 <p>App</p>
                 <a
-                  href="assets/img/portfolio/portfolio-6.jpg"
+                  href="./assets/img/portfolio/portfolio-6.jpg"
                   data-gall="portfolioGallery"
                   className="venobox preview-link"
                   title="App 3"
@@ -200,7 +200,7 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-card">
               <img
-                src="assets/img/portfolio/portfolio-7.jpg"
+                src="./assets/img/portfolio/portfolio-7.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -208,7 +208,7 @@ export default function Portfolio() {
                 <h4>Card 1</h4>
                 <p>Card</p>
                 <a
-                  href="assets/img/portfolio/portfolio-7.jpg"
+                  href="./assets/img/portfolio/portfolio-7.jpg"
                   data-gall="portfolioGallery"
                   className="venobox preview-link"
                   title="Card 1"
@@ -227,7 +227,7 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-card">
               <img
-                src="assets/img/portfolio/portfolio-8.jpg"
+                src="./assets/img/portfolio/portfolio-8.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -235,7 +235,7 @@ export default function Portfolio() {
                 <h4>Card 3</h4>
                 <p>Card</p>
                 <a
-                  href="assets/img/portfolio/portfolio-8.jpg"
+                  href="./assets/img/portfolio/portfolio-8.jpg"
                   data-gall="portfolioGallery"
                   className="venobox preview-link"
                   title="Card 3"
@@ -254,7 +254,7 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-web">
               <img
-                src="assets/img/portfolio/portfolio-9.jpg"
+                src="./assets/img/portfolio/portfolio-9.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -262,7 +262,7 @@ export default function Portfolio() {
                 <h4>Web 3</h4>
                 <p>Web</p>
                 <a
-                  href="assets/img/portfolio/portfolio-9.jpg"
+                  href="./assets/img/portfolio/portfolio-9.jpg"
                   data-gall="portfolioGallery"
                   className="venobox preview-link"
                   title="Web 3"
