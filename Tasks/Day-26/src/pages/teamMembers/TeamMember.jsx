@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import ImageFluid from "../../components/ImageFluid";
 
 export default function TeamMember({ member, deleteTeamMember }) {
-  const { id, name, designation, gender, image } = member;
+  const { id, fullName, designation, gender, image } = member;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
       <div className="member" data-aos="fade-up">
@@ -38,7 +41,7 @@ export default function TeamMember({ member, deleteTeamMember }) {
           </div> */}
         </div>
         <div className="member-info">
-          <h4>{name}</h4>
+          <h4>{fullName}</h4>
           <span>{designation}</span>
         </div>
       </div>

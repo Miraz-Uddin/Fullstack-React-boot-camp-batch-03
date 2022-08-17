@@ -9,7 +9,7 @@ export default function MemberView({ teamMembers }) {
   if (!memberFound) {
     return <Navigate to="/team" replace={true} />;
   } else {
-    const { name, designation, gender, image, bio } = memberFound;
+    const { fullName, designation, gender, image, bio } = memberFound;
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
@@ -36,7 +36,7 @@ export default function MemberView({ teamMembers }) {
           <div className="container">
             <div className="section-title" data-aos="fade-up">
               <h2>
-                <strong>{name}</strong>
+                <strong>{fullName}</strong>
               </h2>
               <p>{bio}</p>
             </div>

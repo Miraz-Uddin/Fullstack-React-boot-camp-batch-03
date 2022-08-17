@@ -30,6 +30,9 @@ export default function Nav() {
                     <NavLink to="team">Team</NavLink>
                   </li>
                   <li>
+                    <NavLink to="create/team">Member Add</NavLink>
+                  </li>
+                  <li>
                     <NavLink to="testimonials">Testimonials</NavLink>
                   </li>
                   {/* If You want a deeper level drop down, uncomment below */}

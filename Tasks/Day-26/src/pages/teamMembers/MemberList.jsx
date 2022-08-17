@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import TeamMember from "./TeamMember";
 
 export default function MemberList({ teamMembers, deleteTeamMember }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <main id="main">
       {/* <!-- ======= Breadcrumbs ======= --> */}

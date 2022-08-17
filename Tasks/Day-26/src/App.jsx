@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
@@ -12,6 +13,7 @@ import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
 import Pricing from "./pages/Pricing";
 import Services from "./pages/Services";
+import MemberCreate from "./pages/teamMembers/MemberCreate";
 import MemberEdit from "./pages/teamMembers/MemberEdit";
 import MemberList from "./pages/teamMembers/MemberList";
 import MemberView from "./pages/teamMembers/MemberView";
@@ -66,7 +68,7 @@ const articles = [
 const initialTeamMembers = [
   {
     id: 1,
-    name: "Muhammad Samim",
+    fullName: "Muhammad Samim",
     designation: "Chief Executive Officer",
     gender: "male",
     image: "team/team-1.jpg",
@@ -74,7 +76,7 @@ const initialTeamMembers = [
   },
   {
     id: 2,
-    name: "Sarah Jhonson",
+    fullName: "Sarah Jhonson",
     designation: "Product Manager",
     gender: "female",
     image: "team/team-2.jpg",
@@ -82,7 +84,7 @@ const initialTeamMembers = [
   },
   {
     id: 3,
-    name: "Miraz Uddin",
+    fullName: "Miraz Uddin",
     designation: "Chief Training Officer",
     gender: "male",
     image: "team/team-3.jpg",
@@ -90,7 +92,7 @@ const initialTeamMembers = [
   },
   {
     id: 4,
-    name: "Ruhi Zannat",
+    fullName: "Ruhi Zannat",
     designation: "Administrator",
     gender: "female",
     image: "team/team-4.jpg",
@@ -117,6 +119,15 @@ function App() {
     const updatedTeamMembers = teamMembers.filter((member) => member.id != id);
     setTeamMembers(updatedTeamMembers);
   };
+  const addTeamMember = (newMember) => {
+    // console.log(newMember);
+    const updatedTeamMembers = {
+      id: uuidv4(),
+      image: newMember.image + ".jpg",
+      ...newMember,
+    };
+    setTeamMembers([updatedTeamMembers, ...teamMembers]);
+  };
 
   return (
     <>
@@ -137,6 +148,10 @@ function App() {
           <Route
             path="team/:id"
             element={<MemberView teamMembers={teamMembers} />}
+          />
+          <Route
+            path="create/team"
+            element={<MemberCreate addTeamMember={addTeamMember} />}
           />
           <Route
             path="team/:id/edit"
