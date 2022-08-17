@@ -38,7 +38,9 @@ export default function Portfolio() {
           <div className="row portfolio-container" data-aos="fade-up">
             <div className="col-lg-4 col-md-6 portfolio-item filter-app">
               <img
-                src="./assets/img/portfolio/portfolio-1.jpg"
+                src={`${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/portfolio/portfolio-1.jpg`}
                 className="img-fluid"
                 alt=""
               />
@@ -65,7 +67,9 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-web">
               <img
-                src="./assets/img/portfolio/portfolio-2.jpg"
+                src={`${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/portfolio/portfolio-2.jpg`}
                 className="img-fluid"
                 alt=""
               />
@@ -92,7 +96,9 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-app">
               <img
-                src="./assets/img/portfolio/portfolio-3.jpg"
+                src={`${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/portfolio/portfolio-3.jpg`}
                 className="img-fluid"
                 alt=""
               />
@@ -119,7 +125,9 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-card">
               <img
-                src="./assets/img/portfolio/portfolio-4.jpg"
+                src={`${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/portfolio/portfolio-4.jpg`}
                 className="img-fluid"
                 alt=""
               />
@@ -146,7 +154,9 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-web">
               <img
-                src="./assets/img/portfolio/portfolio-5.jpg"
+                src={`${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/portfolio/portfolio-5.jpg`}
                 className="img-fluid"
                 alt=""
               />
@@ -173,7 +183,9 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-app">
               <img
-                src="./assets/img/portfolio/portfolio-6.jpg"
+                src={`${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/portfolio/portfolio-6.jpg`}
                 className="img-fluid"
                 alt=""
               />
@@ -200,7 +212,9 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-card">
               <img
-                src="./assets/img/portfolio/portfolio-7.jpg"
+                src={`${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/portfolio/portfolio-7.jpg`}
                 className="img-fluid"
                 alt=""
               />
@@ -227,7 +241,9 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-card">
               <img
-                src="./assets/img/portfolio/portfolio-8.jpg"
+                src={`${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/portfolio/portfolio-8.jpg`}
                 className="img-fluid"
                 alt=""
               />
@@ -254,7 +270,9 @@ export default function Portfolio() {
 
             <div className="col-lg-4 col-md-6 portfolio-item filter-web">
               <img
-                src="./assets/img/portfolio/portfolio-9.jpg"
+                src={`${
+                  import.meta.env.VITE_PUBLIC_URL
+                }/assets/img/portfolio/portfolio-9.jpg`}
                 className="img-fluid"
                 alt=""
               />

@@ -12,7 +12,7 @@ export default function Nav() {
             </Link>
           </h1>
           {/* <!-- Uncomment below if you prefer to use an image logo --> */}
-          {/* <a href="index.html" className="logo mr-auto"><img src="./assets/img/logo.png" alt="" className="img-fluid"/></a> */}
+          {/* <a href="index.html" className="logo mr-auto"><img src={`${import.meta.env.VITE_PUBLIC_URL}/assets/img/logo.png`} alt="" className="img-fluid"/></a> */}
 
           <nav className="nav-menu d-none d-lg-block">
             <ul>

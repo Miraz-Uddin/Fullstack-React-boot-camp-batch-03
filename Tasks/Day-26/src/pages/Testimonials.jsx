@@ -26,7 +26,9 @@ export default function Testimonials() {
             <div className="col-lg-6" data-aos="fade-up">
               <div className="testimonial-item">
                 <img
-                  src="./assets/img/testimonials/testimonials-1.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/testimonials/testimonials-1.jpg`}
                   className="testimonial-img"
                   alt=""
                 />
@@ -46,7 +48,9 @@ export default function Testimonials() {
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
               <div className="testimonial-item mt-4 mt-lg-0">
                 <img
-                  src="./assets/img/testimonials/testimonials-2.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/testimonials/testimonials-2.jpg`}
                   className="testimonial-img"
                   alt=""
                 />
@@ -66,7 +70,9 @@ export default function Testimonials() {
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay="200">
               <div className="testimonial-item mt-4">
                 <img
-                  src="./assets/img/testimonials/testimonials-3.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/testimonials/testimonials-3.jpg`}
                   className="testimonial-img"
                   alt=""
                 />
@@ -85,7 +91,9 @@ export default function Testimonials() {
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay="300">
               <div className="testimonial-item mt-4">
                 <img
-                  src="./assets/img/testimonials/testimonials-4.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/testimonials/testimonials-4.jpg`}
                   className="testimonial-img"
                   alt=""
                 />
@@ -105,7 +113,9 @@ export default function Testimonials() {
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay="400">
               <div className="testimonial-item mt-4">
                 <img
-                  src="./assets/img/testimonials/testimonials-5.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/testimonials/testimonials-5.jpg`}
                   className="testimonial-img"
                   alt=""
                 />
@@ -125,7 +135,9 @@ export default function Testimonials() {
             <div className="col-lg-6" data-aos="fade-up" data-aos-delay="500">
               <div className="testimonial-item mt-4">
                 <img
-                  src="./assets/img/testimonials/testimonials-6.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/testimonials/testimonials-6.jpg`}
                   className="testimonial-img"
                   alt=""
                 />

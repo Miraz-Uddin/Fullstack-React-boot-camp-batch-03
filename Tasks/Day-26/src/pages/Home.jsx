@@ -404,7 +404,9 @@ export default function Home() {
             <div className="row portfolio-container" data-aos="fade-up">
               <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                 <img
-                  src="./assets/img/portfolio/portfolio-1.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/portfolio/portfolio-1.jpg`}
                   className="img-fluid"
                   alt=""
                 />
@@ -431,7 +433,9 @@ export default function Home() {
 
               <div className="col-lg-4 col-md-6 portfolio-item filter-web">
                 <img
-                  src="./assets/img/portfolio/portfolio-2.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/portfolio/portfolio-2.jpg`}
                   className="img-fluid"
                   alt=""
                 />
@@ -458,7 +462,9 @@ export default function Home() {
 
               <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                 <img
-                  src="./assets/img/portfolio/portfolio-3.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/portfolio/portfolio-3.jpg`}
                   className="img-fluid"
                   alt=""
                 />
@@ -485,7 +491,9 @@ export default function Home() {
 
               <div className="col-lg-4 col-md-6 portfolio-item filter-card">
                 <img
-                  src="./assets/img/portfolio/portfolio-4.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/portfolio/portfolio-4.jpg`}
                   className="img-fluid"
                   alt=""
                 />
@@ -512,7 +520,9 @@ export default function Home() {
 
               <div className="col-lg-4 col-md-6 portfolio-item filter-web">
                 <img
-                  src="./assets/img/portfolio/portfolio-5.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/portfolio/portfolio-5.jpg`}
                   className="img-fluid"
                   alt=""
                 />
@@ -539,7 +549,9 @@ export default function Home() {
 
               <div className="col-lg-4 col-md-6 portfolio-item filter-app">
                 <img
-                  src="./assets/img/portfolio/portfolio-6.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/portfolio/portfolio-6.jpg`}
                   className="img-fluid"
                   alt=""
                 />
@@ -566,7 +578,9 @@ export default function Home() {
 
               <div className="col-lg-4 col-md-6 portfolio-item filter-card">
                 <img
-                  src="./assets/img/portfolio/portfolio-7.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/portfolio/portfolio-7.jpg`}
                   className="img-fluid"
                   alt=""
                 />
@@ -593,7 +607,9 @@ export default function Home() {
 
               <div className="col-lg-4 col-md-6 portfolio-item filter-card">
                 <img
-                  src="./assets/img/portfolio/portfolio-8.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/portfolio/portfolio-8.jpg`}
                   className="img-fluid"
                   alt=""
                 />
@@ -620,7 +636,9 @@ export default function Home() {
 
               <div className="col-lg-4 col-md-6 portfolio-item filter-web">
                 <img
-                  src="./assets/img/portfolio/portfolio-9.jpg"
+                  src={`${
+                    import.meta.env.VITE_PUBLIC_URL
+                  }/assets/img/portfolio/portfolio-9.jpg`}
                   className="img-fluid"
                   alt=""
                 />
@@ -663,7 +681,9 @@ export default function Home() {
               <div className="col-lg-3 col-md-4 col-6">
                 <div className="client-logo">
                   <img
-                    src="./assets/img/clients/client-1.png"
+                    src={`${
+                      import.meta.env.VITE_PUBLIC_URL
+                    }/assets/img/clients/client-1.png`}
                     className="img-fluid"
                     alt=""
                   />
@@ -673,7 +693,9 @@ export default function Home() {
               <div className="col-lg-3 col-md-4 col-6">
                 <div className="client-logo">
                   <img
-                    src="./assets/img/clients/client-2.png"
+                    src={`${
+                      import.meta.env.VITE_PUBLIC_URL
+                    }/assets/img/clients/client-2.png`}
                     className="img-fluid"
                     alt=""
                   />
@@ -683,7 +705,9 @@ export default function Home() {
               <div className="col-lg-3 col-md-4 col-6">
                 <div className="client-logo">
                   <img
-                    src="./assets/img/clients/client-3.png"
+                    src={`${
+                      import.meta.env.VITE_PUBLIC_URL
+                    }/assets/img/clients/client-3.png`}
                     className="img-fluid"
                     alt=""
                   />
@@ -693,7 +717,9 @@ export default function Home() {
               <div className="col-lg-3 col-md-4 col-6">
                 <div className="client-logo">
                   <img
-                    src="./assets/img/clients/client-4.png"
+                    src={`${
+                      import.meta.env.VITE_PUBLIC_URL
+                    }/assets/img/clients/client-4.png`}
                     className="img-fluid"
                     alt=""
                   />
@@ -703,7 +729,9 @@ export default function Home() {
               <div className="col-lg-3 col-md-4 col-6">
                 <div className="client-logo">
                   <img
-                    src="./assets/img/clients/client-5.png"
+                    src={`${
+                      import.meta.env.VITE_PUBLIC_URL
+                    }/assets/img/clients/client-5.png`}
                     className="img-fluid"
                     alt=""
                   />
@@ -713,7 +741,9 @@ export default function Home() {
               <div className="col-lg-3 col-md-4 col-6">
                 <div className="client-logo">
                   <img
-                    src="./assets/img/clients/client-6.png"
+                    src={`${
+                      import.meta.env.VITE_PUBLIC_URL
+                    }/assets/img/clients/client-6.png`}
                     className="img-fluid"
                     alt=""
                   />
@@ -723,7 +753,9 @@ export default function Home() {
               <div className="col-lg-3 col-md-4 col-6">
                 <div className="client-logo">
                   <img
-                    src="./assets/img/clients/client-7.png"
+                    src={`${
+                      import.meta.env.VITE_PUBLIC_URL
+                    }/assets/img/clients/client-7.png`}
                     className="img-fluid"
                     alt=""
                   />
@@ -733,7 +765,9 @@ export default function Home() {
               <div className="col-lg-3 col-md-4 col-6">
                 <div className="client-logo">
                   <img
-                    src="./assets/img/clients/client-8.png"
+                    src={`${
+                      import.meta.env.VITE_PUBLIC_URL
+                    }/assets/img/clients/client-8.png`}
                     className="img-fluid"
                     alt=""
                   />
