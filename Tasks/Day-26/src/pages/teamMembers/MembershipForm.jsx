@@ -1,4 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useSnackbar } from "notistack";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,6 +15,7 @@ export default function MembershipForm({
     window.scrollTo(0, 0);
   }, []);
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
 
   const memberInitials = {
     bio: memberFound?.bio || "Supportive and Creative When Solving Problems",
@@ -60,11 +62,15 @@ export default function MembershipForm({
         image: memberImage,
         id,
       });
+      enqueueSnackbar("Team Member Updated Successfully", {
+        variant: "success",
+      });
     } else {
       addTeamMember({
         ...data,
         image: memberImage,
       });
+      enqueueSnackbar("New Team Member Added", { variant: "success" });
     }
     navigate("/team");
   };
