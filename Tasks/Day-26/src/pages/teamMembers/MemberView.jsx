@@ -26,7 +26,7 @@ export default function MemberView({ teamMembers }) {
                 <li>
                   <Link to="/team">Team</Link>
                 </li>
-                <li>View({name})</li>
+                <li>View({fullName})</li>
               </ol>
             </div>
           </div>

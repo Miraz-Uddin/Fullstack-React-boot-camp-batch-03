@@ -120,13 +120,24 @@ function App() {
     setTeamMembers(updatedTeamMembers);
   };
   const addTeamMember = (newMember) => {
-    // console.log(newMember);
     const updatedTeamMembers = {
       id: uuidv4(),
       image: newMember.image + ".jpg",
       ...newMember,
     };
     setTeamMembers([updatedTeamMembers, ...teamMembers]);
+  };
+  const updateTeamMember = (editedMember) => {
+    const updatedTeamList = teamMembers.map((member) => {
+      if (member.id == editedMember.id) {
+        return {
+          ...editedMember,
+          image: editedMember.image + ".jpg",
+        };
+      }
+      return member;
+    });
+    setTeamMembers(updatedTeamList);
   };
 
   return (
@@ -154,8 +165,13 @@ function App() {
             element={<MemberCreate addTeamMember={addTeamMember} />}
           />
           <Route
-            path="team/:id/edit"
-            element={<MemberEdit teamMembers={teamMembers} />}
+            path="edit/team/:id"
+            element={
+              <MemberEdit
+                teamMembers={teamMembers}
+                updateTeamMember={updateTeamMember}
+              />
+            }
           />
           <Route path="testimonials" element={<Testimonials />} />
           <Route path="services" element={<Services />} />

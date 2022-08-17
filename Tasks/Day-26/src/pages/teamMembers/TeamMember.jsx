@@ -17,7 +17,7 @@ export default function TeamMember({ member, deleteTeamMember }) {
             <Link to={`/team/${id}`}>
               <i className="icofont-eye-alt"></i>
             </Link>
-            <Link to={`/team/${id}/edit`}>
+            <Link to={`/edit/team/${id}`}>
               <i className="icofont-pen-alt-1"></i>
             </Link>
             <Link to={`/team`} onClick={() => deleteTeamMember(id)}>
