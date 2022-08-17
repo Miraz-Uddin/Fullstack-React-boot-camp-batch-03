@@ -361,7 +361,7 @@ export default function About() {
             <div className="col-lg-3 col-md-4 col-6">
               <div className="client-logo">
                 <img
-                  src={`${import.meta.env.VITE_PUBLIC_URL}/assets/img/clients/client-4.png"
+                  src={`${import.meta.env.VITE_PUBLIC_URL}/assets/img/clients/client-4.png`}
                   className="img-fluid"
                   alt=""
                 />
